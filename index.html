@@ -120,6 +120,11 @@
     background:var(--pine);color:#fff;font-size:15px;font-weight:700;cursor:pointer;
   }
   .sheet .foot{font-size:11.5px;color:var(--mist);margin-bottom:14px}
+  a.shop{color:var(--pine);text-decoration:underline;text-underline-offset:3px;font-weight:700}
+  .menu{
+    display:block;font-size:12px;color:#7a5c1e;background:#faf5e8;
+    border-radius:8px;padding:5px 10px;margin-top:6px;
+  }
   footer{
     text-align:center;font-size:11.5px;color:var(--mist);padding:8px 20px 30px;
   }
@@ -132,7 +137,7 @@
 <header>
   <div class="kicker">Asahikawa · Biei · Furano · Asahidake</div>
   <h1>旭川 6 日行程</h1>
-  <p>2026.9.23（二）–9.28（一）｜全程住旭川｜24–27 租車自駕（4 天）<br>✈ 去程 JX850 10:05–15:00｜回程 BR115 15:20–19:05</p>
+  <p>2026.9.23（三）–9.28（一）｜全程住旭川｜24–27 租車自駕（4 天）<br>✈ 去程 JX850 10:05–15:00｜回程 BR115 15:20–19:05</p>
 </header>
 
 <nav>
@@ -157,8 +162,10 @@
       <span class="move">🚆 快速 + 特急 約 2 小時 30 分</span>
       <button class="btn-tt" onclick="openTT('jr')">JR 時刻參考</button></div></div>
     <div class="step"><time>19:30</time><div class="what">旭川站前飯店 check-in</div></div>
-    <div class="step"><time>晚餐</time><div class="what"><b>旭川醬油拉麵</b>：青葉／梅光軒／拉麵村擇一
-      <span class="note">拉麵村到 21:00，市區店較晚，別擔心吃不到</span></div></div>
+    <div class="step"><time>晚餐</time><div class="what"><b>旭川醬油拉麵</b>：
+      <a class="shop" href="https://www.google.com/maps/place/?q=place_id:ChIJ__-DjhHmDF8Rcu01ICSK-hc" target="_blank" rel="noopener">梅光軒 本店</a>（開到 20:30，晚到也吃得到）
+      <span class="menu">🍜 必點：醬油拉麵 ¥900 前後、奶油玉米拉麵約 ¥1,210｜1969 年老店，湯頭豬骨海鮮雙湯底</span>
+      <span class="note">⚠️ 名店<a class="shop" href="https://www.google.com/maps/place/?q=place_id:ChIJYaeSJBLmDF8RUFu2RcwxelA" target="_blank" rel="noopener">青葉 本店</a>只開到 17:30（週三休），今晚趕不上——想吃的話改排 9/24 或 9/25 午餐（醬油叉燒麵約 ¥1,100，1947 年創業旭川拉麵始祖）</span></div></div>
   </div>
 </section>
 
@@ -170,17 +177,21 @@
   </div>
   <div class="steps">
     <div class="step"><time>08:30</time><div class="what">旭川站前<b>取車</b>（租 4 天，9/27 傍晚還車）</div></div>
-    <div class="step"><time>09:30</time><div class="what"><b>旭山動物園</b>（企鵝館・海豹館・北極熊）
+    <div class="step"><time>09:30</time><div class="what"><a class="shop" href="https://www.google.com/maps/place/?q=place_id:ChIJyyPgtczgDF8R01OoHb3cJcg" target="_blank" rel="noopener">旭山動物園</a>（企鵝館・海豹館・北極熊）
+      <span class="menu">📍 日本最北動物園，以「行為展示」聞名——透過水中隧道、圓柱水槽看動物最自然的一面｜門票 ¥1,000、中學生以下免費｜開到 17:15｜官網：<a class="shop" href="https://www.city.asahikawa.hokkaido.jp/asahiyamazoo/" target="_blank" rel="noopener">city.asahikawa.hokkaido.jp/asahiyamazoo</a></span>
       <span class="move car">🚗 旭川站 → 動物園 約 30 分</span></div></div>
-    <div class="step"><time>13:30</time><div class="what"><b>上野農場</b> 秋季庭園＋NAYA cafe 午茶
+    <div class="step"><time>13:30</time><div class="what"><a class="shop" href="https://www.google.com/maps/place/?q=place_id:ChIJpW2LCnPhDF8RhBVuxlxc-uU" target="_blank" rel="noopener">上野農場</a> 秋季庭園＋NAYA cafe 午茶
+      <span class="menu">📍 北海道庭園之旅的起點，英式鄉村庭園+找地精(gnome)的趣味設計｜門票約 ¥1,000｜開到 17:00｜官網：<a class="shop" href="https://uenofarm.net/" target="_blank" rel="noopener">uenofarm.net</a></span>
       <span class="move car">🚗 約 15 分</span></div></div>
-    <div class="step"><time>15:30</time><div class="what"><b>男山酒造資料館</b>試飲（免費，有停車場）
+    <div class="step"><time>15:30</time><div class="what"><a class="shop" href="https://www.google.com/maps/place/?q=place_id:ChIJDe8g6qDmDF8RbXtV31xC5Ng" target="_blank" rel="noopener">男山酒造り資料館</a>試飲（免費入館，有停車場）
+      <span class="menu">📍 350 年歷史酒藏，可看釀造工程、免費試飲數款，¥1,000 可換 18 枚代幣喝 12 款吟釀；還能免費裝大雪山伏流水帶走｜開到 17:00｜官網：<a class="shop" href="https://www.otokoyama.com/" target="_blank" rel="noopener">otokoyama.com</a></span>
       <span class="move car">🚗 約 15 分</span>
       <span class="note">🍶 有試飲就換人開車，或改買回飯店喝</span></div></div>
     <div class="step"><time>17:00</time><div class="what">回飯店停車
       <span class="move car">🚗 約 15 分</span></div></div>
-    <div class="step"><time>18:00</time><div class="what"><b>成吉思汗 大黑屋</b> 烤羊肉
-      <span class="note">名店必排，開店前 15–20 分到最穩；走路去，別開車</span></div></div>
+    <div class="step"><time>17:30</time><div class="what"><a class="shop" href="https://www.google.com/maps/place/?q=place_id:ChIJRf7PMgzmDF8Rm_3HyHkvjn0" target="_blank" rel="noopener">成吉思汗 大黑屋 本店</a> 烤羊肉
+      <span class="menu">🐑 必點：生ラム肩ロース（生羊肩里肌）、大黑套餐、羊肉香腸｜人均約 ¥2,500–3,500｜配白飯+生蛋+醬油是行家吃法</span>
+      <span class="note">14:30 就開門，不接受訂位、抽號碼牌制；建議 17:30 前去避開晚餐尖峰；回飯店停好車走路去</span></div></div>
   </div>
 </section>
 
@@ -192,13 +203,17 @@
   </div>
   <div class="steps">
     <div class="step"><time>08:30</time><div class="what">開車出發（已有車，直接上路）</div></div>
-    <div class="step"><time>09:10</time><div class="what"><b>拼布之路</b>：Ken & Mary 之木、七星之木
+    <div class="step"><time>09:10</time><div class="what"><b>拼布之路</b>：<a class="shop" href="https://www.google.com/maps/place/?q=place_id:ChIJSyHU2TTEDF8R2T5vc9zm5o4" target="_blank" rel="noopener">Ken & Mary 之木</a>、<a class="shop" href="https://www.google.com/maps/place/?q=place_id:ChIJC3IhmnLEDF8RDGL0pq7wdhE" target="_blank" rel="noopener">七星之木</a>
+      <span class="menu">📍 因 1970 年代汽車・香菸廣告成名的孤樹群，看點是樹+丘陵田野+十勝岳連峰同框｜免費、路邊停車即可，車多時別停田埂</span>
       <span class="move car">🚗 旭川 → 美瑛 約 40 分</span></div></div>
-    <div class="step"><time>11:30</time><div class="what"><b>四季彩之丘</b>（9 月底仍有波斯菊等秋花）
+    <div class="step"><time>11:30</time><div class="what"><a class="shop" href="https://www.google.com/maps/place/?q=place_id:ChIJDeIPuVXIDF8RPhiBRw83_ag" target="_blank" rel="noopener">四季彩之丘</a>（9 月底仍有波斯菊等秋花）
+      <span class="menu">📍 15 公頃彩虹花田+羊駝牧場，可搭遊園車；秋季看波斯菊、鼠尾草｜門票 ¥500、8:40–17:30｜官網：<a class="shop" href="https://www.shikisainooka.jp/" target="_blank" rel="noopener">shikisainooka.jp</a></span>
       <span class="move car">🚗 約 15 分</span></div></div>
-    <div class="step"><time>14:00</time><div class="what"><b>青池 → 白鬚瀑布</b>
+    <div class="step"><time>14:00</time><div class="what"><a class="shop" href="https://www.google.com/maps/place/?q=place_id:ChIJbyoi3mLMDF8RnndLnx8YzQQ" target="_blank" rel="noopener">青池</a> → <a class="shop" href="https://www.google.com/maps/place/?q=place_id:ChIJX3VG4K7MDF8RJmYvjz6VBgU" target="_blank" rel="noopener">白鬚瀑布</a>
+      <span class="menu">📍 青池：火山礦物質造就的夢幻土耳其藍池水+枯木，晴天最藍｜停車 ¥500｜白鬚瀑布：從岩縫湧出的藍色伏流瀑布，橋上看免費，兩點相距車程 5 分</span>
       <span class="move car">🚗 約 20 分</span></div></div>
-    <div class="step"><time>15:30</time><div class="what"><b>十勝岳望岳台</b>：紅葉＋（運氣好）初冠雪
+    <div class="step"><time>15:30</time><div class="what"><a class="shop" href="https://www.google.com/maps/place/?q=place_id:ChIJmyaJBfUuc18RDEYfrZvEDCY" target="_blank" rel="noopener">十勝岳望岳台</a>：紅葉＋（運氣好）初冠雪
+      <span class="menu">📍 海拔 930m 的活火山展望台，可近看十勝岳噴氣孔；10 月初前後是紅葉高峰｜免費停車、24 小時開放，旁有防災資訊中心</span>
       <span class="move car">🚗 約 25 分</span></div></div>
     <div class="step"><time>17:00</time><div class="what">開回旭川
       <span class="move car">🚗 約 50 分</span></div></div>
@@ -215,10 +230,13 @@
   <div class="steps">
     <div class="step"><time>09:00</time><div class="what">出發往富良野
       <span class="move car">🚗 旭川 → 富良野 約 1 小時</span></div></div>
-    <div class="step"><time>10:00</time><div class="what"><b>租腳踏車</b>鄉間騎行：葡萄酒廠 → 起司工房（可 DIY）
+    <div class="step"><time>10:00</time><div class="what"><b>租腳踏車</b>鄉間騎行：富良野葡萄酒工廠 → <a class="shop" href="https://www.google.com/maps/place/?q=place_id:ChIJR0W0-2NSc18R0Q545HM0ANE" target="_blank" rel="noopener">富良野起司工房</a>（可 DIY）
+      <span class="menu">📍 起司工房：免費參觀製程+試吃，可報名起司/冰淇淋 DIY（現場二樓櫃台預約，一早去搶最早場次）；披薩工房的現烤披薩很有名｜9:00–17:00</span>
       <span class="note">氣溫約 15–20°C，帶防風外套</span></div></div>
-    <div class="step"><time>12:30</time><div class="what">午餐：<b>富良野蛋包咖哩飯</b></div></div>
-    <div class="step"><time>14:00</time><div class="what"><b>麓郷</b>「五郎石之家」一帶
+    <div class="step"><time>12:30</time><div class="what">午餐：<a class="shop" href="https://www.google.com/maps/place/?q=place_id:ChIJHQMlUW9Nc18RsMfqn_MK3WY" target="_blank" rel="noopener">唯我独尊</a> 富良野蛋包咖哩飯
+      <span class="menu">🍛 必點：香腸蛋包咖哩約 ¥1,300–1,500｜加咖哩醬免費，跟店員喊「ル・ル・ル♪」是名場面｜週一休</span></div></div>
+    <div class="step"><time>14:00</time><div class="what"><a class="shop" href="https://www.google.com/maps/place/?q=place_id:ChIJkdGQgdVOc18RmIZ4noZywKE" target="_blank" rel="noopener">麓郷「五郎石之家」</a>一帶
+      <span class="menu">📍 國民劇《來自北國》的拍攝場景，石之家+最初之家；套票 ¥1,200 可連看「拾來之家」等三處｜9:30–17:00｜沒看過劇也值得為田園風景走一趟</span>
       <span class="move car">🚗 約 25 分</span></div></div>
     <div class="step"><time>16:30</time><div class="what">開回旭川、飯店停車
       <span class="move car">🚗 約 1 小時 10 分</span></div></div>
@@ -233,7 +251,8 @@
     <span class="day-tag tag-car">自駕</span>
   </div>
   <div class="steps">
-    <div class="step"><time>08:30</time><div class="what">開車前往<b>旭岳纜車山麓站</b>
+    <div class="step"><time>08:30</time><div class="what">開車前往<a class="shop" href="https://www.google.com/maps/place/?q=place_id:ChIJH-lrt7PXDF8RXBNa8gRGnAw" target="_blank" rel="noopener">旭岳纜車 山麓站</a>
+      <span class="menu">📍 北海道最高峰(2,291m)五合目直達纜車，約 20 分一班；來回約 ¥3,200（秋季價格請以官網為準）｜8:30–16:30｜官網：<a class="shop" href="https://asahidake.hokkaido.jp/" target="_blank" rel="noopener">asahidake.hokkaido.jp</a></span>
       <span class="move car">🚗 旭川 → 旭岳 約 1 小時 15 分</span>
       <span class="note">紅葉旺季週日纜車站停車場會滿，早出發最保險</span>
       <button class="btn-tt" onclick="openTT('bus')">巴士時刻表（備用）</button></div></div>
@@ -241,12 +260,15 @@
     <div class="step"><time>10:15</time><div class="what"><b>姿見池步道</b>一圈約 1–1.5 小時
       <span class="note">海拔 1600m，山上可能接近 0°C，保暖衣物必帶</span></div></div>
     <div class="step"><time>12:30</time><div class="what">下山、<b>旭岳溫泉</b>泡日歸湯＋午餐</div></div>
-    <div class="step"><time>14:30</time><div class="what">順路繞<b>天人峽・羽衣瀑布</b>（時間體力允許的話）
+    <div class="step"><time>14:30</time><div class="what">順路繞天人峽・<a class="shop" href="https://www.google.com/maps/place/?q=place_id:ChIJnxs-6ovWDF8Rk3S_JmwE15k" target="_blank" rel="noopener">羽衣瀑布</a>（時間體力允許的話）
+      <span class="menu">📍 北海道落差最大的瀑布(270m)，秋天峽谷紅葉超美；停車場走木棧道約 500m 即達，免費，人少清幽，還有免費足湯</span>
       <span class="move car">🚗 約 30 分</span></div></div>
     <div class="step"><time>16:30</time><div class="what">開回旭川、站前<b>還車</b>（4 天租期結束）
       <span class="move car">🚗 約 1 小時 15 分</span>
       <span class="note">還車前記得加滿油（站附近有加油站）</span></div></div>
-    <div class="step"><time>晚餐</time><div class="what">居酒屋「独酌三四郎」最後一晚</div></div>
+    <div class="step"><time>晚餐</time><div class="what">居酒屋<a class="shop" href="https://www.google.com/maps/place/?q=place_id:ChIJ5zitbQ7mDF8RuXf2UocQpwg" target="_blank" rel="noopener">独酌 三四郎</a> 最後一晚
+      <span class="menu">🍶 必點：串燒（雞肉超推）、季節魚料理、老闆嚴選日本酒｜人均約 ¥4,000–6,000</span>
+      <span class="note">⚠️ 17:00–20:50、週日一休——9/27 是週日公休！建議改訂 9/24 或 9/26 晚上，或最後一晚換別家（見下方備註）。熱門店建議請飯店代訂位</span></div></div>
   </div>
   <div class="warn">🍁 紅葉備案：若出發前查 tenki.jp 發現旭岳狀況不佳，改去層雲峽・黑岳（見頃 9 月下旬–10 月中旬，JR 到上川轉巴士）。</div>
 </section>
@@ -255,17 +277,19 @@
 <section class="day" id="d28">
   <div class="day-head">
     <div class="day-date">9/28</div><div class="day-title">回程・新千歲搭機</div>
-    <span class="day-tag tag-train">JR</span>
+    <span class="day-tag tag-bus">巴士</span>
   </div>
   <div class="steps">
-    <div class="step"><time>08:00</time><div class="what">JR 旭川 →（札幌轉快速 Airport）→ 新千歲空港
-      <span class="move">🚆 約 2.5–3 小時（約 11:00–11:30 到機場）</span>
-      <button class="btn-tt" onclick="openTT('jr')">JR 時刻參考</button></div></div>
+    <div class="step"><time>08:50</time><div class="what">旭川站前 ⑨ 乘車處搭 <b>たいせつライナー</b>直達新千歲
+      <span class="move">🚌 約 2 小時 45 分（11:35 到）｜約 ¥3,800</span>
+      <button class="btn-tt" onclick="openTT('liner')">たいせつライナー時刻表</button>
+      <span class="note">⚠️ 預約制！需事先在「バスNAVI北海道」訂位；停靠國內線航廈，走連絡通道到國際線</span></div></div>
     <div class="step"><time>12:20</time><div class="what">BR115 <b>報到開櫃</b>（起飛前 3 小時）
       <span class="note">⚠️ 起飛前 60 分（14:20）截止報到，務必提前</span></div></div>
     <div class="step"><time>—</time><div class="what">逛新千歲伴手禮（LeTAO、六花亭都在管制區內外有店）</div></div>
     <div class="step"><time>15:20</time><div class="what"><b>BR115 長榮航空</b> 起飛 → 約 19:05 抵達桃園 T2</div></div>
   </div>
+  <div class="warn">🚆 備案：若巴士客滿或大雪/事故停駛，改搭 JR（旭川 08:00 前後的特急 → 札幌轉快速 Airport，約 11:00–11:30 到機場），班次多不怕沒車。</div>
 </section>
 
 </main>
@@ -296,6 +320,21 @@
     </table>
     <div class="foot">橘色＝行程建議班次。單程約 98–108 分，途經旭川機場・旭岳溫泉。班次可能季節性調整，出發前務必再確認官網。</div>
     <button class="close" onclick="document.getElementById('tt-bus').classList.remove('open')">關閉</button>
+  </div>
+</div>
+
+<!-- たいせつライナー Modal -->
+<div class="modal" id="tt-liner" onclick="closeTT(event,'tt-liner')">
+  <div class="sheet">
+    <h3>たいせつライナー時刻表</h3>
+    <div class="sub">北都交通／旭川電氣軌道｜旭川 ⇄ 新千歲空港直達（預約制）</div>
+    <table>
+      <tr><th>旭川站前發</th><th>新千歲空港著</th></tr>
+      <tr><td class="hl">08:50</td><td>11:35</td></tr>
+      <tr><td>11:50</td><td>14:35</td></tr>
+    </table>
+    <div class="foot">橘色＝行程建議班次（銜接 BR115 12:20 開櫃）。11:50 那班到機場只剩 45 分緩衝，太趕不建議。部分季節有加開班次。<br><br>📌 訂位：バスNAVI北海道（busnavi-hk.jp）需先免費註冊會員。單程約 ¥3,800、來回約 ¥7,000。巴士停國內線航廈，需走連絡通道到國際線報到。班次與票價可能調整，出發前請以官網為準。</div>
+    <button class="close" onclick="document.getElementById('tt-liner').classList.remove('open')">關閉</button>
   </div>
 </div>
 
