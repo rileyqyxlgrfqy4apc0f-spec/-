@@ -125,6 +125,26 @@
     display:block;font-size:12px;color:#7a5c1e;background:#faf5e8;
     border-radius:8px;padding:5px 10px;margin-top:6px;
   }
+  .flex{
+    background:var(--card);border:1px solid var(--line);border-radius:16px;
+    margin:0 14px 18px;padding:16px 18px;max-width:560px;
+  }
+  .flex h2{font-size:15px;color:var(--pine);margin-bottom:4px;display:flex;align-items:center;gap:6px}
+  .flex .lead{font-size:12.5px;color:var(--mist);margin-bottom:12px}
+  .flex .drow{
+    display:grid;grid-template-columns:auto 1fr;gap:10px;
+    padding:9px 0;border-bottom:1px solid #f0ede4;font-size:13px;
+  }
+  .flex .drow:last-of-type{border-bottom:none}
+  .flex .wx{font-size:11px;font-weight:800;padding:3px 8px;border-radius:999px;white-space:nowrap;height:fit-content}
+  .wx-sun{background:#fbe9d0;color:#b3671e}
+  .wx-any{background:#e2ece7;color:var(--pine)}
+  .flex .dname b{color:var(--ink)}
+  .flex .dname span{display:block;font-size:11.5px;color:var(--mist);margin-top:1px}
+  .flex .rule{
+    font-size:12px;color:#7a5c1e;background:#faf5e8;border-radius:8px;
+    padding:8px 12px;margin-top:12px;line-height:1.6;
+  }
   footer{
     text-align:center;font-size:11.5px;color:var(--mist);padding:8px 20px 30px;
   }
@@ -146,6 +166,37 @@
 </nav>
 
 <main>
+
+<div class="flex">
+  <h2>🔀 看天氣調度：整天對調原則</h2>
+  <div class="lead">四個自駕日（9/24–27）可視天氣<b>整包對調</b>。原則：晴天優先給「吃天氣」的戶外日，陰雨天走「不挑天氣」的日子。</div>
+
+  <div class="drow">
+    <span class="wx wx-any">☁️ 不挑天氣</span>
+    <div class="dname"><b>市區逛街日</b>（原 9/24）<span>AEON・買物公園・永山購物（陀螺）・大黑屋。全室內，雨天最佳選擇</span></div>
+  </div>
+  <div class="drow">
+    <span class="wx wx-sun">☀️ 吃天氣</span>
+    <div class="dname"><b>美瑛丘陵日</b>（原 9/25）<span>拼布之路・青池・望岳台。晴天景色差最多，優先排晴天</span></div>
+  </div>
+  <div class="drow">
+    <span class="wx wx-any">☁️ 較不挑</span>
+    <div class="dname"><b>富良野日</b>（原 9/27）<span>起司工房・五郎石之家多為室內/半室內，小雨可行；此日含還車，建議擺最後一天不動</span></div>
+  </div>
+  <div class="drow">
+    <span class="wx wx-sun">☀️ 最吃天氣</span>
+    <div class="dname"><b>旭岳紅葉日</b>（原 9/26）<span>纜車+姿見池，雲霧或雨會直接看不到景。務必排晴天，壞天氣改層雲峽或跳到別天</span></div>
+  </div>
+
+  <div class="rule">
+    📌 <b>調度規則</b>：<br>
+    ① 到旭川後看 3 天預報，把<b>美瑛</b>和<b>旭岳</b>塞進最晴的兩天。<br>
+    ② <b>市區逛街日</b>是雨天萬用牌，哪天下雨就換它上。<br>
+    ③ <b>富良野日=還車日</b>盡量固定在 <b>9/27</b>（要 18:00 前還車、動線已配好），非必要別動。<br>
+    ④ 餐廳跟著「那一天」走，但注意店休：唯我独尊週一休、天金/奥芝週三休、青葉只到 17:30。<br>
+    ⑤ 租車 9/24 取、9/27 還——對調的是「白天玩什麼」，取還車日不變。
+  </div>
+</div>
 
 <!-- 9/23 -->
 <section class="day" id="d23">
@@ -179,38 +230,40 @@
 <!-- 9/24 -->
 <section class="day" id="d24">
   <div class="day-head">
-    <div class="day-date">9/24</div><div class="day-title">取車・旭川市郊</div>
+    <div class="day-date">9/24</div><div class="day-title">取車・市區逛街日</div>
     <span class="day-tag tag-car">自駕</span>
   </div>
   <div class="steps">
-    <div class="step"><time>08:30</time><div class="what">旭川站前<b>取車</b>（租 4 天，9/27 傍晚還車）</div></div>
-    <div class="step"><time>09:30</time><div class="what"><a class="shop" href="https://www.google.com/maps/search/?api=1&query=%E6%97%AD%E5%B1%B1%E5%8B%95%E7%89%A9%E5%9C%92&query_place_id=ChIJyyPgtczgDF8R01OoHb3cJcg" target="_blank" rel="noopener">旭山動物園</a>（企鵝館・海豹館・北極熊）
-      <span class="menu">📍 日本最北動物園，以「行為展示」聞名——透過水中隧道、圓柱水槽看動物最自然的一面｜門票 ¥1,000、中學生以下免費｜開到 17:15｜官網：<a class="shop" href="https://www.city.asahikawa.hokkaido.jp/asahiyamazoo/" target="_blank" rel="noopener">city.asahikawa.hokkaido.jp/asahiyamazoo</a></span>
-      <span class="move car">🚗 旭川站 → 動物園 約 30 分</span></div></div>
-    <div class="step"><time>13:15</time><div class="what">午餐：<a class="shop" href="https://www.google.com/maps/search/?api=1&query=%E5%9B%9E%E8%BB%A2%E5%AF%BF%E5%8F%B8%E3%83%88%E3%83%AA%E3%83%88%E3%83%B3%20%E6%97%AD%E5%B7%9D&query_place_id=ChIJK4BnndnnDF8RlVF3gni9swY" target="_blank" rel="noopener">迴轉壽司 Toriton 旭神店</a>（動物園開過去順路）
-      <span class="menu">🍣 北海道人氣迴轉壽司 4.7 區最高分之一，現點現做、iPad 點餐｜人均約 ¥3,000–3,500</span>
-      <span class="note">平日 13:15 過午餐尖峰，等位時間最短；先抽號碼牌，旁邊有超市可逛｜排太長的備案：奥芝商店湯咖哩（🚗 15 分，午餐到 14:30）</span>
-      <span class="move car">🚗 動物園 → 約 15 分</span></div></div>
-    <div class="step"><time>15:00</time><div class="what"><a class="shop" href="https://www.google.com/maps/search/?api=1&query=%E4%B8%8A%E9%87%8E%E3%83%95%E3%82%A1%E3%83%BC%E3%83%A0%20%E6%97%AD%E5%B7%9D&query_place_id=ChIJpW2LCnPhDF8RhBVuxlxc-uU" target="_blank" rel="noopener">上野農場</a> 秋季庭園＋NAYA cafe 午茶
-      <span class="menu">📍 北海道庭園之旅的起點，英式鄉村庭園+找地精(gnome)的趣味設計｜門票約 ¥1,000｜開到 17:00｜官網：<a class="shop" href="https://uenofarm.net/" target="_blank" rel="noopener">uenofarm.net</a></span>
-      <span class="move car">🚗 約 15 分</span></div></div>
-    <div class="step"><time>16:10</time><div class="what"><a class="shop" href="https://www.google.com/maps/search/?api=1&query=%E7%94%B7%E5%B1%B1%E9%85%92%E9%80%A0%E3%82%8A%E8%B3%87%E6%96%99%E9%A4%A8%20%E6%97%AD%E5%B7%9D&query_place_id=ChIJDe8g6qDmDF8RbXtV31xC5Ng" target="_blank" rel="noopener">男山酒造り資料館</a>試飲（免費入館，有停車場）
-      <span class="menu">📍 350 年歷史酒藏，可看釀造工程、免費試飲數款，¥1,000 可換 18 枚代幣喝 12 款吟釀；還能免費裝大雪山伏流水帶走｜開到 17:00｜官網：<a class="shop" href="https://www.otokoyama.com/" target="_blank" rel="noopener">otokoyama.com</a></span>
-      <span class="move car">🚗 約 15 分</span>
-      <span class="note">🍶 有試飲就換人開車，或改買回飯店喝</span></div></div>
-    <div class="step"><time>16:55</time><div class="what"><a class="shop" href="https://www.google.com/maps/search/?api=1&query=%E3%82%A8%E3%83%87%E3%82%A3%E3%82%AA%E3%83%B3%20%E6%97%AD%E5%B7%9D%E6%B0%B8%E5%B1%B1%E5%BA%97&query_place_id=ChIJqXrsIKfmDF8R7HOSRYjZ6sU" target="_blank" rel="noopener">Edion 永山店</a>（家電量販，開到 20:00）
-      <span class="menu">🔌 相機/吹風機/電鍋/小家電齊全，可免稅｜旭川沒有 BicCamera・Yodobashi，這類量販是替代選擇｜跟 UNIQLO・男山同一區</span>
+    <div class="step"><time>09:30</time><div class="what">睡飽出發，先逛站前<a class="shop" href="https://www.google.com/maps/search/?api=1&query=%E3%82%A4%E3%82%AA%E3%83%B3%E3%83%A2%E3%83%BC%E3%83%AB%E6%97%AD%E5%B7%9D%E9%A7%85%E5%89%8D&query_place_id=ChIJrW0kqz_nDF8RJaoWOkm4VMk" target="_blank" rel="noopener">AEON MALL 旭川站前</a>（連通 JR 站、飯店隔壁）
+      <span class="menu">🛍️ 9:00–21:00｜服飾、雜貨、玩具賣場、大超市、美食街；北海道伴手禮也能先逛；陀螺這裡也可能買得到（可刷卡免稅）</span></div></div>
+    <div class="step"><time>11:30</time><div class="what"><a class="shop" href="https://www.google.com/maps/search/?api=1&query=%E5%B9%B3%E5%92%8C%E9%80%9A%E8%B2%B7%E7%89%A9%E5%85%AC%E5%9C%92%20%E6%97%AD%E5%B7%9D" target="_blank" rel="noopener">平和通買物公園</a> 商店街散步
+      <span class="menu">🚶 日本第一條行人徒步商店街，1km 長；藥妝、服飾、在地小店、咖啡；隨走隨逛最愜意</span>
+      <span class="move">🚶 從 AEON 步行即達</span></div></div>
+    <div class="step"><time>12:30</time><div class="what">午餐：<a class="shop" href="https://www.google.com/maps/search/?api=1&query=%E5%9B%9E%E8%BB%A2%E5%AF%BF%E5%8F%B8%E3%83%88%E3%83%AA%E3%83%88%E3%83%B3%20%E6%97%AD%E5%B7%9D&query_place_id=ChIJK4BnndnnDF8RlVF3gni9swY" target="_blank" rel="noopener">迴轉壽司 Toriton 旭神店</a>（★必吃）
+      <span class="menu">🍣 北海道人氣迴轉壽司，現點現做、iPad 點餐｜人均約 ¥3,000–3,500｜11:00 開店，早點去避開排隊</span>
+      <span class="note">在市區東側、往永山方向順路：吃完接著開去永山購物剛好｜想吃拉麵的話備選青葉本店（只到 17:30）</span>
+      <span class="move car">🚗 站前 → 約 15 分</span></div></div>
+    <div class="step"><time>14:00</time><div class="what">回飯店/站前<b>取車</b>（租 4 天，9/27 傍晚還車）</div></div>
+    <div class="step"><time>14:30</time><div class="what">🌀 <a class="shop" href="https://www.google.com/maps/search/?api=1&query=%E3%83%88%E3%82%A4%E3%82%B6%E3%83%A9%E3%82%B9%20%E6%97%AD%E5%B7%9D%E6%B0%B8%E5%B1%B1&query_place_id=ChIJ0074HJPmDF8RKN76egc7A1s" target="_blank" rel="noopener">玩具反斗城 永山 Powers 店</a> 買戰鬥陀螺
+      <span class="menu">🎯 品項最齊的玩具專賣店，ベイブレード（戰鬥陀螺）本體/發射器/配件/競技盤都找得到；Tomica、鋼彈等日本玩具也多｜可刷卡免稅｜10:00–19:00</span>
+      <span class="move car">🚗 站前 → 永山 約 20 分</span></div></div>
+    <div class="step"><time>15:45</time><div class="what"><a class="shop" href="https://www.google.com/maps/search/?api=1&query=UNIQLO%20%E6%97%AD%E5%B7%9D%E6%B0%B8%E5%B1%B1%E5%BA%97&query_place_id=ChIJl_kSeZPmDF8Rv33OsrYyo2E" target="_blank" rel="noopener">UNIQLO 永山 Powers 店</a>（旭川最大間）
+      <span class="menu">🛍️ 跟玩具反斗城同一個 Powers 商場區，走過去就到｜可辦免稅</span>
+      <span class="move">🚶 同商場區</span></div></div>
+    <div class="step"><time>16:30</time><div class="what"><a class="shop" href="https://www.google.com/maps/search/?api=1&query=%E3%82%A8%E3%83%87%E3%82%A3%E3%82%AA%E3%83%B3%20%E6%97%AD%E5%B7%9D%E6%B0%B8%E5%B1%B1%E5%BA%97&query_place_id=ChIJqXrsIKfmDF8R7HOSRYjZ6sU" target="_blank" rel="noopener">Edion 永山店</a>（家電量販）
+      <span class="menu">🔌 相機/吹風機/電鍋/小家電齊全，可免稅｜旭川沒有 BicCamera・Yodobashi，這類量販是替代選擇｜同區順路</span>
       <span class="move car">🚗 約 5 分</span></div></div>
-    <div class="step"><time>17:30</time><div class="what"><a class="shop" href="https://www.google.com/maps/search/?api=1&query=UNIQLO%20%E6%97%AD%E5%B7%9D%E6%B0%B8%E5%B1%B1%E5%BA%97&query_place_id=ChIJl_kSeZPmDF8Rv33OsrYyo2E" target="_blank" rel="noopener">UNIQLO 永山 Powers 店</a>（旭川最大間，開到 20:00）
-      <span class="menu">🛍️ 在 Nagayama Powers 商場內、大停車場；跟男山酒造同一區順路｜可辦免稅</span>
-      <span class="move car">🚗 步行/車程數分鐘</span></div></div>
+    <div class="step"><time>17:15</time><div class="what"><a class="shop" href="https://www.google.com/maps/search/?api=1&query=%E7%94%B7%E5%B1%B1%E9%85%92%E9%80%A0%E3%82%8A%E8%B3%87%E6%96%99%E9%A4%A8%20%E6%97%AD%E5%B7%9D&query_place_id=ChIJDe8g6qDmDF8RbXtV31xC5Ng" target="_blank" rel="noopener">男山酒造り資料館</a>（有時間再去，17:00 閉館前）
+      <span class="menu">📍 350 年酒藏，免費試飲、可裝大雪山伏流水｜同永山方向｜⚠️ 17:00 閉館，趕不上就跳過留到別天</span>
+      <span class="note">🍶 有試飲就換人開車</span></div></div>
     <div class="step"><time>18:00</time><div class="what">回 AMANEK 停車
       <span class="move car">🚗 約 15 分</span>
       <span class="note">🅿️ AMANEK 無自有停車場，用附近特約/投幣停車場（一晚約 ¥800–1,200），check-in 時問櫃台哪個最近最划算</span></div></div>
-    <div class="step"><time>18:15</time><div class="what"><a class="shop" href="https://www.google.com/maps/search/?api=1&query=%E6%88%90%E5%90%89%E6%80%9D%E6%B1%97%E5%A4%A7%E9%BB%92%E5%B1%8B%20%E6%9C%AC%E5%BA%97%20%E6%97%AD%E5%B7%9D&query_place_id=ChIJRf7PMgzmDF8Rm_3HyHkvjn0" target="_blank" rel="noopener">成吉思汗 大黑屋 本店</a> 烤羊肉
-      <span class="menu">🐑 必點：生ラム肩ロース（生羊肩里肌）、大黑套餐、羊肉香腸｜人均約 ¥2,500–3,500｜配白飯+生蛋+醬油是行家吃法</span>
-      <span class="note">14:30 就開門，不接受訂位、抽號碼牌制；晚餐尖峰要抽號碼牌等 30 分上下；回飯店停好車走路去</span></div></div>
+    <div class="step"><time>18:30</time><div class="what"><a class="shop" href="https://www.google.com/maps/search/?api=1&query=%E7%84%BC%E8%82%89%E3%82%B9%E3%82%B0%E3%83%AB%20%E6%97%AD%E5%B7%9D%20%E8%B1%8A%E5%B2%A1&query_place_id=ChIJ2RZlVyfnDF8RCN2Lg2Npahg" target="_blank" rel="noopener">焼肉スグル</a> 炭火燒肉 🌟4.5
+      <span class="menu">🥩 豊岡12条、和牛炭火燒肉名店｜必點：スグル本気盛（招牌拼盤）、味噌內臟、鹽內臟、牛里肌｜人均約 ¥3,000–4,000｜17:00–24:30 每天營業</span>
+      <span class="note">⚠️ 評論提到「就算店內有空位、沒訂位仍會被婉拒」→ 這家<b>務必先訂位</b>（電話 +81 166-73-3580 或 hotpepper，請飯店代訂）｜在市區東側豊岡，跟永山購物同方向，逛完順路開過去、吃完開車回飯店</span></div></div>
   </div>
+  <div class="warn">🌀 陀螺購買順位：玩具反斗城（永山，最齊）＞ AEON 站前（順路先看）＞ 玩具吉田（元町、只收現金）。想省車程，站前 AEON 沒有再跑永山。</div>
 </section>
 
 <!-- 9/25 -->
@@ -250,40 +303,14 @@
 <!-- 9/26 -->
 <section class="day" id="d26">
   <div class="day-head">
-    <div class="day-date">9/26</div><div class="day-title">富良野騎車日</div>
-    <span class="day-tag tag-car">自駕</span>
-  </div>
-  <div class="steps">
-    <div class="step"><time>09:00</time><div class="what">出發往富良野
-      <span class="move car">🚗 旭川 → 富良野 約 1 小時</span></div></div>
-    <div class="step"><time>10:00</time><div class="what"><b>租腳踏車</b>鄉間騎行：富良野葡萄酒工廠 → <a class="shop" href="https://www.google.com/maps/search/?api=1&query=%E5%AF%8C%E8%89%AF%E9%87%8E%E3%83%81%E3%83%BC%E3%82%BA%E5%B7%A5%E6%88%BF&query_place_id=ChIJR0W0-2NSc18R0Q545HM0ANE" target="_blank" rel="noopener">富良野起司工房</a>（可 DIY）
-      <span class="menu">📍 起司工房：免費參觀製程+試吃，可報名起司/冰淇淋 DIY（現場二樓櫃台預約，一早去搶最早場次）；披薩工房的現烤披薩很有名｜9:00–17:00</span>
-      <span class="note">氣溫約 15–20°C，帶防風外套</span></div></div>
-    <div class="step"><time>12:30</time><div class="what">午餐：<a class="shop" href="https://www.google.com/maps/search/?api=1&query=%E5%94%AF%E6%88%91%E7%8B%AC%E5%B0%8A%20%E5%AF%8C%E8%89%AF%E9%87%8E&query_place_id=ChIJHQMlUW9Nc18RsMfqn_MK3WY" target="_blank" rel="noopener">唯我独尊</a> 富良野蛋包咖哩飯
-      <span class="menu">🍛 必點：香腸蛋包咖哩約 ¥1,300–1,500｜加咖哩醬免費，跟店員喊「ル・ル・ル♪」是名場面｜週一休</span></div></div>
-    <div class="step"><time>14:00</time><div class="what"><a class="shop" href="https://www.google.com/maps/search/?api=1&query=%E4%BA%94%E9%83%8E%E3%81%AE%E7%9F%B3%E3%81%AE%E5%AE%B6%20%E9%BA%93%E9%83%B7&query_place_id=ChIJkdGQgdVOc18RmIZ4noZywKE" target="_blank" rel="noopener">麓郷「五郎石之家」</a>一帶
-      <span class="menu">📍 國民劇《來自北國》的拍攝場景，石之家+最初之家；套票 ¥1,200 可連看「拾來之家」等三處｜9:30–17:00｜沒看過劇也值得為田園風景走一趟</span>
-      <span class="move car">🚗 約 25 分</span></div></div>
-    <div class="step"><time>16:00</time><div class="what">開回旭川、附近停車場過夜
-      <span class="move car">🚗 約 1 小時 10 分（17:10 前後到）</span>
-      <span class="note">趁天亮開國道 237，比摸黑回程安全（秋天入夜山路有鹿）</span></div></div>
-    <div class="step"><time>18:30</time><div class="what">晚餐：<a class="shop" href="https://www.google.com/maps/search/?api=1&query=%E6%A2%85%E5%85%89%E8%BB%92%20%E6%9C%AC%E5%BA%97%20%E6%97%AD%E5%B7%9D&query_place_id=ChIJ__-DjhHmDF8Rcu01ICSK-hc" target="_blank" rel="noopener">梅光軒 本店</a> 旭川醬油拉麵
-      <span class="menu">🍜 必點：醬油拉麵 ¥900 前後、奶油玉米拉麵約 ¥1,210｜1969 年老店，豬骨海鮮雙湯底｜開到 20:30、離 AMANEK 步行 3 分</span></div></div>
-  </div>
-  <div class="warn">🌧️ 雨天備案：富良野葡萄酒工廠試飲＋風之花園森林步道（小雨可走）。提早回旭川吃梅光軒，行程更從容。</div>
-</section>
-
-<!-- 9/27 -->
-<section class="day" id="d27">
-  <div class="day-head">
-    <div class="day-date">9/27</div><div class="day-title">旭岳紅葉 ★重點日</div>
+    <div class="day-date">9/26</div><div class="day-title">旭岳紅葉 ★重點日</div>
     <span class="day-tag tag-car">自駕</span>
   </div>
   <div class="steps">
     <div class="step"><time>08:30</time><div class="what">開車前往<a class="shop" href="https://www.google.com/maps/search/?api=1&query=%E6%97%AD%E5%B2%B3%E3%83%AD%E3%83%BC%E3%83%97%E3%82%A6%E3%82%A7%E3%82%A4&query_place_id=ChIJH-lrt7PXDF8RXBNa8gRGnAw" target="_blank" rel="noopener">旭岳纜車 山麓站</a>
       <span class="menu">📍 北海道最高峰(2,291m)五合目直達纜車，約 20 分一班；來回約 ¥3,200（秋季價格請以官網為準）｜8:30–16:30｜官網：<a class="shop" href="https://asahidake.hokkaido.jp/" target="_blank" rel="noopener">asahidake.hokkaido.jp</a></span>
       <span class="move car">🚗 旭川 → 旭岳 約 1 小時 15 分</span>
-      <span class="note">紅葉旺季週日纜車站停車場會滿，早出發最保險</span>
+      <span class="note">紅葉旺季週六纜車站停車場會滿，早出發最保險</span>
       <button class="btn-tt" onclick="openTT('bus')">巴士時刻表（備用）</button></div></div>
     <div class="step"><time>10:00</time><div class="what"><b>旭岳纜車</b>上姿見站（約 10 分）</div></div>
     <div class="step"><time>10:15</time><div class="what"><b>姿見池步道</b>一圈約 1–1.5 小時
@@ -295,15 +322,42 @@
     <div class="step"><time>16:30</time><div class="what">開回旭川
       <span class="move car">🚗 約 1 小時 15 分</span></div></div>
     <div class="step"><time>17:50</time><div class="what"><a class="shop" href="https://www.google.com/maps/search/?api=1&query=%E7%A7%80%E5%B2%B3%E8%8D%98%20%E6%97%AD%E5%B7%9D&query_place_id=ChIJYUnkYV_vDF8RSr5aaSNWuiU" target="_blank" rel="noopener">秀岳荘 旭川店</a>（北海道傳奇戶外用品店）
-      <span class="menu">⛺ 登山滑雪露營裝備選品一流、店員都是玩家，白天剛爬完旭岳來逛最有感｜10:00–19:00、週日有開（週一休）</span>
-      <span class="move car">🚗 市區西側，回程順路</span></div></div>
-    <div class="step"><time>18:40</time><div class="what">加滿油、站前<b>還車</b>（4 天租期結束）
-      <span class="note">先確認租車公司還車櫃檯營業到幾點（多數到 20:00）</span></div></div>
-    <div class="step"><time>19:15</time><div class="what">晚餐：居酒屋<a class="shop" href="https://www.google.com/maps/search/?api=1&query=%E5%A4%A9%E9%87%91%20%E5%B1%85%E9%85%92%E5%B1%8B%20%E6%97%AD%E5%B7%9D%204%E6%9D%A1&query_place_id=ChIJvV8kjw3mDF8R_vVotg8cpWk" target="_blank" rel="noopener">天金</a>（4条通7丁目）🌟4.1
+      <span class="menu">⛺ 登山滑雪露營裝備選品一流、店員都是玩家，白天剛爬完旭岳來逛最有感｜10:00–19:00、週六有開（週一休）</span>
+      <span class="move car">🚗 市區西側，回程順路，逛完停車場過夜</span></div></div>
+    <div class="step"><time>19:00</time><div class="what">晚餐：<a class="shop" href="https://www.google.com/maps/search/?api=1&query=%E6%88%90%E5%90%89%E6%80%9D%E6%B1%97%E5%A4%A7%E9%BB%92%E5%B1%8B%20%E6%9C%AC%E5%BA%97%20%E6%97%AD%E5%B7%9D&query_place_id=ChIJRf7PMgzmDF8Rm_3HyHkvjn0" target="_blank" rel="noopener">成吉思汗 大黑屋 本店</a> 烤羊肉
+      <span class="menu">🐑 必點：生ラム肩ロース（生羊肩里肌）、大黑套餐、羊肉香腸｜人均約 ¥2,500–3,500｜配白飯+生蛋+醬油是行家吃法</span>
+      <span class="note">14:30 就開門、不接受訂位、抽號碼牌制；旭岳回來停好車走路去，晚餐尖峰約等 30 分</span></div></div>
+  </div>
+  <div class="warn">🍁 紅葉備案：若出發前查 tenki.jp 發現旭岳狀況不佳，改去層雲峽・黑岳（見頃 9 月下旬–10 月中旬）。</div>
+</section>
+
+<!-- 9/27 -->
+<section class="day" id="d27">
+  <div class="day-head">
+    <div class="day-date">9/27</div><div class="day-title">富良野騎車・還車日</div>
+    <span class="day-tag tag-car">自駕</span>
+  </div>
+  <div class="steps">
+    <div class="step"><time>08:30</time><div class="what">出發往富良野
+      <span class="move car">🚗 旭川 → 富良野 約 1 小時</span></div></div>
+    <div class="step"><time>09:30</time><div class="what"><b>租腳踏車</b>鄉間騎行：富良野葡萄酒工廠 → <a class="shop" href="https://www.google.com/maps/search/?api=1&query=%E5%AF%8C%E8%89%AF%E9%87%8E%E3%83%81%E3%83%BC%E3%82%BA%E5%B7%A5%E6%88%BF&query_place_id=ChIJR0W0-2NSc18R0Q545HM0ANE" target="_blank" rel="noopener">富良野起司工房</a>（可 DIY）
+      <span class="menu">📍 起司工房：免費參觀製程+試吃，可報名起司/冰淇淋 DIY（現場二樓櫃台預約，一早去搶最早場次）；披薩工房的現烤披薩很有名｜9:00–17:00</span>
+      <span class="note">氣溫約 15–20°C，帶防風外套</span></div></div>
+    <div class="step"><time>12:00</time><div class="what">午餐：<a class="shop" href="https://www.google.com/maps/search/?api=1&query=%E5%94%AF%E6%88%91%E7%8B%AC%E5%B0%8A%20%E5%AF%8C%E8%89%AF%E9%87%8E&query_place_id=ChIJHQMlUW9Nc18RsMfqn_MK3WY" target="_blank" rel="noopener">唯我独尊</a> 富良野蛋包咖哩飯
+      <span class="menu">🍛 必點：香腸蛋包咖哩約 ¥1,300–1,500｜加咖哩醬免費，跟店員喊「ル・ル・ル♪」是名場面｜週一休（今天週日 OK）</span></div></div>
+    <div class="step"><time>13:30</time><div class="what"><a class="shop" href="https://www.google.com/maps/search/?api=1&query=%E4%BA%94%E9%83%8E%E3%81%AE%E7%9F%B3%E3%81%AE%E5%AE%B6%20%E9%BA%93%E9%83%B7&query_place_id=ChIJkdGQgdVOc18RmIZ4noZywKE" target="_blank" rel="noopener">麓郷「五郎石之家」</a>一帶
+      <span class="menu">📍 國民劇《來自北國》的拍攝場景，石之家+最初之家；套票 ¥1,200 可連看「拾來之家」等三處｜9:30–17:00</span>
+      <span class="move car">🚗 約 25 分</span></div></div>
+    <div class="step"><time>15:30</time><div class="what">開回旭川
+      <span class="move car">🚗 約 1 小時 10 分（16:40 前後到）</span>
+      <span class="note">趁天亮開國道 237，比摸黑回程安全（秋天入夜山路有鹿）</span></div></div>
+    <div class="step"><time>17:00</time><div class="what">加滿油、站前<b>還車</b>（4 天租期結束，18:00 前完成）
+      <span class="note">還車時間充裕；先確認租車公司還車櫃檯營業時間</span></div></div>
+    <div class="step"><time>19:00</time><div class="what">晚餐：居酒屋<a class="shop" href="https://www.google.com/maps/search/?api=1&query=%E5%A4%A9%E9%87%91%20%E5%B1%85%E9%85%92%E5%B1%8B%20%E6%97%AD%E5%B7%9D%204%E6%9D%A1&query_place_id=ChIJvV8kjw3mDF8R_vVotg8cpWk" target="_blank" rel="noopener">天金</a>（4条通7丁目）🌟4.1
       <span class="menu">🍢 老字號大眾割烹：串燒、生魚片拼盤、天婦羅、壽司通通有；旭川靈魂食物「新子焼き」（半雞炭烤）必點｜人均約 ¥3,500–5,000｜15:00–22:30、週三休（今天週日 OK）</span>
       <span class="note">離 AMANEK 步行約 7 分，還完車走路去、開到 22:30 完全不趕｜超熱門：請飯店幫忙訂位（有旅客連吃三晚都要先訂）｜備案：奥芝商店湯咖哩（計程車約 ¥1,200、週日開到 21:00）</span></div></div>
   </div>
-  <div class="warn">🍁 紅葉備案：若出發前查 tenki.jp 發現旭岳狀況不佳，改去層雲峽・黑岳（見頃 9 月下旬–10 月中旬）。</div>
+  <div class="warn">🌧️ 雨天備案：富良野葡萄酒工廠試飲＋風之花園森林步道（小雨可走）。</div>
 </section>
 
 <!-- 9/27 -->
@@ -374,7 +428,7 @@
       <tr><td class="hl">08:50</td><td>11:35</td></tr>
       <tr><td>11:50</td><td>14:35</td></tr>
     </table>
-    <div class="foot">橘色＝行程建議班次（去程接 JX850 15:00 落地、回程接 BR115 12:20 開櫃）。去程只有 16:27 這班接得上落地時間，且機場端無現場售票、務必先網路預約。回程 11:50 那班到機場剩 45 分太趕。單程 ¥4,500、網路早鳥（乘車 14 天前）¥4,200、來回 ¥8,000。<br><br>📌 訂票網站（皆須免費註冊，當天有位也能訂、約出發 10 分前截止）：<br>・<a class="shop" href="https://www.busnavi-hk.jp/route/taisetsu-liner/" target="_blank" rel="noopener">バスNAVI北海道（日文）</a><br>・<a class="shop" href="https://japanbuslines.com/en/" target="_blank" rel="noopener">JAPAN BUS LINES（外國人用・有中文）</a><br><br>新千歲上下車只在國內線航廈，國際線走連絡通道。班次票價可能調整，出發前以官網為準。</div></div>
+    <div class="foot">橘色＝行程建議班次（去程接 JX850 15:00 落地、回程接 BR115 12:20 開櫃）。去程只有 16:27 這班接得上落地時間，且機場端無現場售票、務必先網路預約。回程 11:50 那班到機場剩 45 分太趕。單程 ¥4,500、網路早鳥（乘車 14 天前）¥4,200、來回 ¥8,000。<br><br>📌 訂票網站（皆須免費註冊，當天有位也能訂、約出發 10 分前截止）：<br>・<a class="shop" href="https://www.busnavi-hk.jp/route/taisetsu-liner/" target="_blank" rel="noopener">バスNAVI北海道（日文）</a><br>・<a class="shop" href="https://japanbuslines.com/en/" target="_blank" rel="noopener">JAPAN BUS LINES（外國人用・有中文）</a><br><br>新千歲上下車只在國內線航廈，國際線走連絡通道。班次票價可能調整，出發前以官網為準。</div>
     <button class="close" onclick="document.getElementById('tt-liner').classList.remove('open')">關閉</button>
   </div>
 </div>
