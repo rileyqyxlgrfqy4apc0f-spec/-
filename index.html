@@ -141,6 +141,23 @@
   .wx-any{background:#e2ece7;color:var(--pine)}
   .flex .dname b{color:var(--ink)}
   .flex .dname span{display:block;font-size:11.5px;color:var(--mist);margin-top:1px}
+  .idx{display:flex;gap:8px;margin:10px 0 6px;flex-wrap:wrap}
+  .idx .badge{
+    flex:1;min-width:96px;border-radius:10px;padding:8px 10px;
+    border:1px solid var(--line);background:#fafaf7;
+  }
+  .idx .badge b{display:block;font-size:17px;font-weight:800;line-height:1.2}
+  .idx .badge span{display:block;font-size:11px;color:var(--mist);margin-top:3px;line-height:1.45}
+  .idx .a b{color:#2f7d4f} .idx .a{background:#eaf5ee;border-color:#cfe6d8}
+  .idx .b b{color:#b3671e} .idx .b{background:#fbf1e2;border-color:#ecd9ae}
+  .idx .c b{color:#b3352d} .idx .c{background:#fbeae8;border-color:#eecac6}
+  .idxbtn{
+    display:block;text-align:center;font-size:14px;font-weight:800;color:#fff;
+    background:var(--pine);border-radius:12px;padding:12px;margin-top:8px;text-decoration:none;
+  }
+  .idxbtn.k{background:#3a5a80}
+  .idxbtn.live{background:#b3352d}
+  .idxbtn.live2{background:#8a3f6b}
   .flex .rule{
     font-size:12px;color:#7a5c1e;background:#faf5e8;border-radius:8px;
     padding:8px 12px;margin-top:12px;line-height:1.6;
@@ -169,32 +186,64 @@
 
 <div class="flex">
   <h2>🔀 看天氣調度：整天對調原則</h2>
-  <div class="lead">四個自駕日（9/24–27）可視天氣<b>整包對調</b>。原則：晴天優先給「吃天氣」的戶外日，陰雨天走「不挑天氣」的日子。</div>
+  <div class="lead">四個自駕日（9/24–27）可視天氣<b>整包對調</b>。目前版本已按 9/20 預報最佳化：乾的日子給戶外、最濕的 9/26 給室內。出發前 2–3 天再對一次預報。</div>
 
   <div class="drow">
     <span class="wx wx-any">☁️ 不挑天氣</span>
-    <div class="dname"><b>市區逛街日</b>（原 9/24）<span>AEON・買物公園・永山購物（陀螺）・大黑屋。全室內，雨天最佳選擇</span></div>
+    <div class="dname"><b>市區逛街日</b>（9/24）<span>取車＋AEON・買物公園・Toriton・永山購物（陀螺）・秀岳荘・燒肉。旭岳指數 C、風 18m/s、美瑛降水 80%——最差的一天全室內避開</span></div>
   </div>
   <div class="drow">
-    <span class="wx wx-sun">☀️ 吃天氣</span>
-    <div class="dname"><b>美瑛丘陵日</b>（原 9/25）<span>拼布之路・青池・望岳台。晴天景色差最多，優先排晴天</span></div>
+    <span class="wx wx-sun">☀️ 最吃天氣 · 30%</span>
+    <div class="dname"><b>旭岳日</b>（9/25）<span>纜車+姿見池。<b>2000m 風僅 8m/s</b>，四天裡風最小、體感最舒服的一天</span></div>
   </div>
   <div class="drow">
-    <span class="wx wx-any">☁️ 較不挑</span>
-    <div class="dname"><b>富良野日</b>（原 9/27）<span>起司工房・五郎石之家多為室內/半室內，小雨可行；此日含還車，建議擺最後一天不動</span></div>
+    <span class="wx wx-sun">☀️ 吃天氣 · 白天 10%</span>
+    <div class="dname"><b>美瑛一日</b>（9/26）<span>電輔車騎拼布之路・四季彩之丘・放牧酪農場・青池。全日 40% 但<b>白天 12–18 時僅 10%</b>，雨在傍晚後｜⚠️ 十勝岳火山警戒 3 級，望岳台已排除</span></div>
   </div>
   <div class="drow">
-    <span class="wx wx-sun">☀️ 最吃天氣</span>
-    <div class="dname"><b>旭岳紅葉日</b>（原 9/26）<span>纜車+姿見池，雲霧或雨會直接看不到景。務必排晴天，壞天氣改層雲峽或跳到別天</span></div>
+    <span class="wx wx-sun">☀️ 吃天氣 · 30%</span>
+    <div class="dname"><b>黑岳・層雲峽日</b>（9/27）<span>纜車+吊椅上 7合目。上川町降水 30%（9/26 是 60%）、1500m 風僅 5m/s；含 18:00 前還車，7:30 出發仍從容</span></div>
   </div>
 
   <div class="rule">
     📌 <b>調度規則</b>：<br>
-    ① 到旭川後看 3 天預報，把<b>美瑛</b>和<b>旭岳</b>塞進最晴的兩天。<br>
-    ② <b>市區逛街日</b>是雨天萬用牌，哪天下雨就換它上。<br>
-    ③ <b>富良野日=還車日</b>盡量固定在 <b>9/27</b>（要 18:00 前還車、動線已配好），非必要別動。<br>
+    ① 兩個山岳日（旭岳 9/25、黑岳 9/27）最吃天氣，出發前一天用「<b>てんくら</b>」查登山指數 A/B/C 再決定。<br>
+    ② <b>市區逛街日</b>是雨天萬用牌，哪天下雨就跟它對調。<br>
+    ③ <b>黑岳日=還車日</b>固定在 <b>9/27</b>（要 18:00 前還車），非必要別動。<br>
     ④ 餐廳跟著「那一天」走，但注意店休：唯我独尊週一休、天金/奥芝週三休、青葉只到 17:30。<br>
-    ⑤ 租車 9/24 取、9/27 還——對調的是「白天玩什麼」，取還車日不變。
+    ⑤ 租車 9/24 取、9/27 還——對調的是「白天玩什麼」，取還車日不變。<br>
+    ⛰️ 山岳日出發前，先看下方「登山指數速查」卡。
+  </div>
+</div>
+
+<div class="flex">
+  <h2>⛰️ 登山指數速查（出發前一天必看）</h2>
+  <div class="lead">てんくら的登山指數把<b>降水量、風速、雲量</b>綜合成一個等級。即時數值無法嵌在這裡（會過期），點下方按鈕看當天實際狀況。</div>
+
+  <div class="idx">
+    <div class="badge a"><b>A</b><span>適合登山。放心上山</span></div>
+    <div class="badge b"><b>B</b><span>風或雨較強，稍不適合。可上但景觀打折</span></div>
+    <div class="badge c"><b>C</b><span>風或雨強，不適合登山。建議改行程</span></div>
+  </div>
+
+  <a class="idxbtn" href="https://tenkura.n-kishou.co.jp/tk/kanko/kad.html?code=01150010&type=15&ba=hk" target="_blank" rel="noopener">查 旭岳 登山指數 →</a>
+  <a class="idxbtn k" href="https://tenkura.n-kishou.co.jp/tk/kanko/kad.html?code=01150016&type=15&ba=hk" target="_blank" rel="noopener">查 黑岳 登山指數 →</a>
+
+  <div class="lead" style="margin-top:14px"><b>📹 山頂即時影像</b>——出發當天早上看這個最準：雲有沒有罩住山頂、紅葉進度、有沒有下雪，一眼就知道。</div>
+  <a class="idxbtn live" href="https://asahidake.hokkaido.jp/ja/" target="_blank" rel="noopener">旭岳 姿見駅 Live（官方）→</a>
+  <a class="idxbtn live" href="https://www.youtube.com/@asahidakeropeway" target="_blank" rel="noopener">旭岳 YouTube 24h 直播 →</a>
+  <a class="idxbtn live2" href="https://www.sizenken.biodic.go.jp/view_new.php?no=108" target="_blank" rel="noopener">旭岳 自然研究所 最新影像 →</a>
+  <a class="idxbtn live2" href="https://www.cametan.com/map/3830.html" target="_blank" rel="noopener">黑岳 5合目 Live（層雲峽方向）→</a>
+
+  <div class="rule">
+    📖 <b>怎麼讀這一頁</b>：<br>
+    ① 捲到「登山指數と上空の気温・風」→「週間予報」那一區。<br>
+    ② 看你那天的 <b>A/B/C 圖示</b>（綠/黃/紅），這是最快的結論。<br>
+    ③ 再對照下面兩列：<b>2000m 風速</b>（超過 15m/s 纜車/吊椅有停駛風險，黑岳的開放式吊椅更敏感）與<b>氣溫</b>（山上比山下低 10°C 上下）。<br>
+    ④ 最下面「近隣市町村」是山腳的町(旭岳→東川町、黑岳→上川町)的降水機率，比旭川市的預報更貼近現場。<br><br>
+    ⏰ <b>更新時間陷阱</b>：週間預報的後半段<b>一天只在凌晨 4 點更新一次</b>。如果別的網站（如 tenki.jp）顯示的天氣跟這裡差很多，以<b>發布時間較新</b>的為準。<br>
+    ⚠️ 降水 0% 不等於適合上山——風速才是纜車停駛與體感的關鍵。兩列要一起看。<br><br>
+    📹 <b>Live 影像的用法</b>：旭岳姿見駅攝影機在海拔 1600m，拍的正是你要走的步道＋旭岳山頂，可視時段約 06:00–18:00；黑岳的架在 5合目(1300m)，朝層雲峽方向，連纜車運行都看得到。<b>出發前一小時看一眼</b>，比任何預報都準——山頂被雲罩住就考慮改行程。旭岳官方那頁也會公告<b>纜車是否因強風停駛</b>。
   </div>
 </div>
 
@@ -230,139 +279,138 @@
 <!-- 9/24 -->
 <section class="day" id="d24">
   <div class="day-head">
-    <div class="day-date">9/24</div><div class="day-title">取車・市區逛街日</div>
-    <span class="day-tag tag-car">自駕</span>
+    <div class="day-date">9/24</div><div class="day-title">市區逛街日（雨天萬用牌）</div>
+    <span class="day-tag tag-city">市區/自駕</span>
   </div>
   <div class="steps">
-    <div class="step"><time>09:30</time><div class="what">睡飽出發，先逛站前<a class="shop" href="https://www.google.com/maps/search/?api=1&query=%E3%82%A4%E3%82%AA%E3%83%B3%E3%83%A2%E3%83%BC%E3%83%AB%E6%97%AD%E5%B7%9D%E9%A7%85%E5%89%8D&query_place_id=ChIJrW0kqz_nDF8RJaoWOkm4VMk" target="_blank" rel="noopener">AEON MALL 旭川站前</a>（連通 JR 站、飯店隔壁）
-      <span class="menu">🛍️ 9:00–21:00｜服飾、雜貨、玩具賣場、大超市、美食街；北海道伴手禮也能先逛；陀螺這裡也可能買得到（可刷卡免稅）</span></div></div>
-    <div class="step"><time>11:30</time><div class="what"><a class="shop" href="https://www.google.com/maps/search/?api=1&query=%E5%B9%B3%E5%92%8C%E9%80%9A%E8%B2%B7%E7%89%A9%E5%85%AC%E5%9C%92%20%E6%97%AD%E5%B7%9D" target="_blank" rel="noopener">平和通買物公園</a> 商店街散步
-      <span class="menu">🚶 日本第一條行人徒步商店街，1km 長；藥妝、服飾、在地小店、咖啡；隨走隨逛最愜意</span>
-      <span class="move">🚶 從 AEON 步行即達</span></div></div>
-    <div class="step"><time>12:30</time><div class="what">午餐：<a class="shop" href="https://www.google.com/maps/search/?api=1&query=%E5%9B%9E%E8%BB%A2%E5%AF%BF%E5%8F%B8%E3%83%88%E3%83%AA%E3%83%88%E3%83%B3%20%E6%97%AD%E5%B7%9D&query_place_id=ChIJK4BnndnnDF8RlVF3gni9swY" target="_blank" rel="noopener">迴轉壽司 Toriton 旭神店</a>（★必吃）
-      <span class="menu">🍣 北海道人氣迴轉壽司，現點現做、iPad 點餐｜人均約 ¥3,000–3,500｜11:00 開店，早點去避開排隊</span>
-      <span class="note">在市區東側、往永山方向順路：吃完接著開去永山購物剛好｜想吃拉麵的話備選青葉本店（只到 17:30）</span>
+    <div class="step"><time>09:30</time><div class="what">先逛站前<a class="shop" href="https://www.google.com/maps/search/?api=1&query=%E3%82%A4%E3%82%AA%E3%83%B3%E3%83%A2%E3%83%BC%E3%83%AB%E6%97%AD%E5%B7%9D%E9%A7%85%E5%89%8D&query_place_id=ChIJrW0kqz_nDF8RJaoWOkm4VMk" target="_blank" rel="noopener">AEON MALL 旭川站前</a>（連通 JR 站、飯店隔壁）
+      <span class="menu">🛍️ 9:00–21:00｜服飾、雜貨、玩具賣場、大超市、美食街；伴手禮也能先逛｜可刷卡免稅</span>
+      <span class="note">🌧️ 旭岳登山指數 C、2000m 風 18m/s、美瑛預報降水 80%——四天裡最差的一天，全室內行程剛好避開</span></div></div>
+    <div class="step"><time>10:45</time><div class="what"><a class="shop" href="https://www.google.com/maps/search/?api=1&query=%E5%B9%B3%E5%92%8C%E9%80%9A%E8%B2%B7%E7%89%A9%E5%85%AC%E5%9C%92%20%E6%97%AD%E5%B7%9D" target="_blank" rel="noopener">平和通買物公園</a> 商店街散步
+      <span class="menu">🚶 日本第一條行人徒步商店街，1km 長；藥妝、服飾、在地小店、咖啡</span></div></div>
+    <div class="step"><time>11:45</time><div class="what">旭川站前<b>取車</b>（租 4 天，9/27 傍晚還車）
+      <span class="note">上午市區徒步就夠，中午才取車——省下 4 小時的市區停車費</span></div></div>
+    <div class="step"><time>12:15</time><div class="what">午餐：<a class="shop" href="https://www.google.com/maps/search/?api=1&query=%E5%9B%9E%E8%BB%A2%E5%AF%BF%E5%8F%B8%E3%83%88%E3%83%AA%E3%83%88%E3%83%B3%20%E6%97%AD%E5%B7%9D&query_place_id=ChIJK4BnndnnDF8RlVF3gni9swY" target="_blank" rel="noopener">迴轉壽司 Toriton 旭神店</a>（★必吃）
+      <span class="menu">🍣 北海道人氣迴轉壽司，現點現做、iPad 點餐｜人均約 ¥3,000–3,500</span>
+      <span class="note">在市區東側、往永山方向順路：吃完接著開去永山購物剛好｜平日人較少，先抽號碼牌</span>
       <span class="move car">🚗 站前 → 約 15 分</span></div></div>
-    <div class="step"><time>14:00</time><div class="what">回飯店/站前<b>取車</b>（租 4 天，9/27 傍晚還車）</div></div>
-    <div class="step"><time>14:30</time><div class="what">🌀 <a class="shop" href="https://www.google.com/maps/search/?api=1&query=%E3%83%88%E3%82%A4%E3%82%B6%E3%83%A9%E3%82%B9%20%E6%97%AD%E5%B7%9D%E6%B0%B8%E5%B1%B1&query_place_id=ChIJ0074HJPmDF8RKN76egc7A1s" target="_blank" rel="noopener">玩具反斗城 永山 Powers 店</a> 買戰鬥陀螺
-      <span class="menu">🎯 品項最齊的玩具專賣店，ベイブレード（戰鬥陀螺）本體/發射器/配件/競技盤都找得到；Tomica、鋼彈等日本玩具也多｜可刷卡免稅｜10:00–19:00</span>
-      <span class="move car">🚗 站前 → 永山 約 20 分</span></div></div>
-    <div class="step"><time>15:45</time><div class="what"><a class="shop" href="https://www.google.com/maps/search/?api=1&query=UNIQLO%20%E6%97%AD%E5%B7%9D%E6%B0%B8%E5%B1%B1%E5%BA%97&query_place_id=ChIJl_kSeZPmDF8Rv33OsrYyo2E" target="_blank" rel="noopener">UNIQLO 永山 Powers 店</a>（旭川最大間）
-      <span class="menu">🛍️ 跟玩具反斗城同一個 Powers 商場區，走過去就到｜可辦免稅</span>
-      <span class="move">🚶 同商場區</span></div></div>
-    <div class="step"><time>16:30</time><div class="what"><a class="shop" href="https://www.google.com/maps/search/?api=1&query=%E3%82%A8%E3%83%87%E3%82%A3%E3%82%AA%E3%83%B3%20%E6%97%AD%E5%B7%9D%E6%B0%B8%E5%B1%B1%E5%BA%97&query_place_id=ChIJqXrsIKfmDF8R7HOSRYjZ6sU" target="_blank" rel="noopener">Edion 永山店</a>（家電量販）
-      <span class="menu">🔌 相機/吹風機/電鍋/小家電齊全，可免稅｜旭川沒有 BicCamera・Yodobashi，這類量販是替代選擇｜同區順路</span>
-      <span class="move car">🚗 約 5 分</span></div></div>
-    <div class="step"><time>17:15</time><div class="what"><a class="shop" href="https://www.google.com/maps/search/?api=1&query=%E7%94%B7%E5%B1%B1%E9%85%92%E9%80%A0%E3%82%8A%E8%B3%87%E6%96%99%E9%A4%A8%20%E6%97%AD%E5%B7%9D&query_place_id=ChIJDe8g6qDmDF8RbXtV31xC5Ng" target="_blank" rel="noopener">男山酒造り資料館</a>（有時間再去，17:00 閉館前）
-      <span class="menu">📍 350 年酒藏，免費試飲、可裝大雪山伏流水｜同永山方向｜⚠️ 17:00 閉館，趕不上就跳過留到別天</span>
-      <span class="note">🍶 有試飲就換人開車</span></div></div>
-    <div class="step"><time>18:00</time><div class="what">回 AMANEK 停車
-      <span class="move car">🚗 約 15 分</span>
-      <span class="note">🅿️ AMANEK 無自有停車場，用附近特約/投幣停車場（一晚約 ¥800–1,200），check-in 時問櫃台哪個最近最划算</span></div></div>
-    <div class="step"><time>18:30</time><div class="what"><a class="shop" href="https://www.google.com/maps/search/?api=1&query=%E7%84%BC%E8%82%89%E3%82%B9%E3%82%B0%E3%83%AB%20%E6%97%AD%E5%B7%9D%20%E8%B1%8A%E5%B2%A1&query_place_id=ChIJ2RZlVyfnDF8RCN2Lg2Npahg" target="_blank" rel="noopener">焼肉スグル</a> 炭火燒肉 🌟4.5
+    <div class="step"><time>14:00</time><div class="what">🌀 <a class="shop" href="https://www.google.com/maps/search/?api=1&query=%E3%83%88%E3%82%A4%E3%82%B6%E3%83%A9%E3%82%B9%20%E6%97%AD%E5%B7%9D%E6%B0%B8%E5%B1%B1&query_place_id=ChIJ0074HJPmDF8RKN76egc7A1s" target="_blank" rel="noopener">玩具反斗城 永山 Powers 店</a> 買戰鬥陀螺
+      <span class="menu">🎯 ベイブレード（戰鬥陀螺）本體/發射器/配件/競技盤最齊；Tomica、鋼彈也多｜可刷卡免稅｜10:00–19:00</span>
+      <span class="move car">🚗 約 10 分</span></div></div>
+    <div class="step"><time>15:15</time><div class="what"><a class="shop" href="https://www.google.com/maps/search/?api=1&query=UNIQLO%20%E6%97%AD%E5%B7%9D%E6%B0%B8%E5%B1%B1%E5%BA%97&query_place_id=ChIJl_kSeZPmDF8Rv33OsrYyo2E" target="_blank" rel="noopener">UNIQLO 永山 Powers 店</a>＋<a class="shop" href="https://www.google.com/maps/search/?api=1&query=%E3%82%A8%E3%83%87%E3%82%A3%E3%82%AA%E3%83%B3%20%E6%97%AD%E5%B7%9D%E6%B0%B8%E5%B1%B1%E5%BA%97&query_place_id=ChIJqXrsIKfmDF8R7HOSRYjZ6sU" target="_blank" rel="noopener">Edion 永山店</a>
+      <span class="menu">🛍️🔌 同一個 Powers 商場區，走過去就到；Edion 有相機/吹風機/電鍋等小家電（旭川沒有 BicCamera・Yodobashi）｜皆可免稅</span></div></div>
+    <div class="step"><time>16:45</time><div class="what"><a class="shop" href="https://www.google.com/maps/search/?api=1&query=%E7%A7%80%E5%B2%B3%E8%8D%98%20%E6%97%AD%E5%B7%9D&query_place_id=ChIJYUnkYV_vDF8RSr5aaSNWuiU" target="_blank" rel="noopener">秀岳荘 旭川店</a>（北海道傳奇戶外用品店）
+      <span class="menu">⛺ 登山滑雪露營裝備選品一流、店員都是玩家；明後天要上旭岳・黑岳，缺保暖層/手套在這補齊｜10:00–19:00、週四有開（週一休）</span>
+      <span class="move car">🚗 市區西北側（緑町）</span>
+      <span class="note">⚠️ 這站是繞路：永山(東北)→秀岳荘(西北)→スグル(東)會多開約 25 分。不缺裝備的話可直接跳過，從永山直接去吃燒肉</span></div></div>
+    <div class="step"><time>18:45</time><div class="what">晚餐：<a class="shop" href="https://www.google.com/maps/search/?api=1&query=%E7%84%BC%E8%82%89%E3%82%B9%E3%82%B0%E3%83%AB%20%E6%97%AD%E5%B7%9D%20%E8%B1%8A%E5%B2%A1&query_place_id=ChIJ2RZlVyfnDF8RCN2Lg2Npahg" target="_blank" rel="noopener">焼肉スグル</a> 炭火燒肉 🌟4.5
       <span class="menu">🥩 豊岡12条、和牛炭火燒肉名店｜必點：スグル本気盛（招牌拼盤）、味噌內臟、鹽內臟、牛里肌｜人均約 ¥3,000–4,000｜17:00–24:30 每天營業</span>
-      <span class="note">⚠️ 評論提到「就算店內有空位、沒訂位仍會被婉拒」→ 這家<b>務必先訂位</b>（電話 +81 166-73-3580 或 hotpepper，請飯店代訂）｜在市區東側豊岡，跟永山購物同方向，逛完順路開過去、吃完開車回飯店</span></div></div>
+      <span class="note">⚠️ 評論提到「就算有空位、沒訂位仍會被婉拒」→ <b>務必先訂位</b>（+81 166-73-3580 或 hotpepper，請飯店代訂）</span></div></div>
   </div>
-  <div class="warn">🌀 陀螺購買順位：玩具反斗城（永山，最齊）＞ AEON 站前（順路先看）＞ 玩具吉田（元町、只收現金）。想省車程，站前 AEON 沒有再跑永山。</div>
+  <div class="warn">☀️ 若當天意外放晴、而山岳日預報轉壞，這天可跟 9/25 或 9/27 對調（取還車日不變）。</div>
 </section>
-
+<!-- 9/27 -->
 <!-- 9/25 -->
 <section class="day" id="d25">
   <div class="day-head">
-    <div class="day-date">9/25</div><div class="day-title">租車・美瑛丘陵</div>
+    <div class="day-date">9/25</div><div class="day-title">旭岳紅葉 ★重點日</div>
     <span class="day-tag tag-car">自駕</span>
   </div>
   <div class="steps">
-    <div class="step"><time>08:30</time><div class="what">開車出發（已有車，直接上路）</div></div>
-    <div class="step"><time>09:10</time><div class="what"><b>拼布之路</b>：<a class="shop" href="https://www.google.com/maps/search/?api=1&query=%E3%82%B1%E3%83%B3%E3%81%A8%E3%83%A1%E3%83%AA%E3%83%BC%E3%81%AE%E6%9C%A8%20%E7%BE%8E%E7%91%9B&query_place_id=ChIJSyHU2TTEDF8R2T5vc9zm5o4" target="_blank" rel="noopener">Ken & Mary 之木</a>、<a class="shop" href="https://www.google.com/maps/search/?api=1&query=%E3%82%BB%E3%83%96%E3%83%B3%E3%82%B9%E3%82%BF%E3%83%BC%E3%81%AE%E6%9C%A8%20%E7%BE%8E%E7%91%9B&query_place_id=ChIJC3IhmnLEDF8RDGL0pq7wdhE" target="_blank" rel="noopener">七星之木</a>
-      <span class="menu">📍 因 1970 年代汽車・香菸廣告成名的孤樹群，看點是樹+丘陵田野+十勝岳連峰同框｜免費、路邊停車即可，車多時別停田埂</span>
-      <span class="move car">🚗 旭川 → 美瑛 約 40 分</span></div></div>
-    <div class="step"><time>10:50</time><div class="what">午餐：<a class="shop" href="https://www.google.com/maps/search/?api=1&query=%E6%B4%8B%E9%A3%9F%E3%81%A8%E3%82%AB%E3%83%95%E3%82%A7%E3%81%98%E3%82%85%E3%82%93%E3%81%BA%E3%81%84%20%E7%BE%8E%E7%91%9B&query_place_id=ChIJrQEV1cTFDF8RsCT_OzBZN-g" target="_blank" rel="noopener">洋食とカフェ じゅんぺい</a>（美瑛町中心）
-      <span class="menu">🍤 必點：海老丼（大隻炸蝦+特製醬汁）、炸豬排、雞肉捲｜人均約 ¥1,500–2,000｜11:00–15:00</span>
-      <span class="note">超人氣店開店即滿：10:50 到門口排第一輪最穩，晚來蝦子可能賣完｜備案：法式 ASPERGES（要預約）或景觀麵包店餐廳 Ferme La Terre</span></div></div>
-    <div class="step"><time>12:45</time><div class="what"><a class="shop" href="https://www.google.com/maps/search/?api=1&query=%E5%9B%9B%E5%AD%A3%E5%BD%A9%E3%81%AE%E4%B8%98%20%E7%BE%8E%E7%91%9B&query_place_id=ChIJDeIPuVXIDF8RPhiBRw83_ag" target="_blank" rel="noopener">四季彩之丘</a>（9 月底仍有波斯菊等秋花）
-      <span class="menu">📍 15 公頃彩虹花田+羊駝牧場，可搭遊園車；秋季看波斯菊、鼠尾草｜門票 ¥500、8:40–17:30｜官網：<a class="shop" href="https://www.shikisainooka.jp/" target="_blank" rel="noopener">shikisainooka.jp</a></span>
-      <span class="move car">🚗 約 15 分</span></div></div>
-    <div class="step"><time>14:00</time><div class="what"><a class="shop" href="https://www.google.com/maps/search/?api=1&query=%E7%99%BD%E9%87%91%E9%9D%92%E3%81%84%E6%B1%A0%20%E7%BE%8E%E7%91%9B&query_place_id=ChIJbyoi3mLMDF8RnndLnx8YzQQ" target="_blank" rel="noopener">青池</a> → <a class="shop" href="https://www.google.com/maps/search/?api=1&query=%E7%99%BD%E3%81%B2%E3%81%92%E3%81%AE%E6%BB%9D%20%E7%BE%8E%E7%91%9B&query_place_id=ChIJX3VG4K7MDF8RJmYvjz6VBgU" target="_blank" rel="noopener">白鬚瀑布</a>
-      <span class="menu">📍 青池：火山礦物質造就的夢幻土耳其藍池水+枯木，晴天最藍｜停車 ¥500｜白鬚瀑布：從岩縫湧出的藍色伏流瀑布，橋上看免費，兩點相距車程 5 分</span>
-      <span class="move car">🚗 約 20 分</span></div></div>
-    <div class="step"><time>15:30</time><div class="what"><a class="shop" href="https://www.google.com/maps/search/?api=1&query=%E5%8D%81%E5%8B%9D%E5%B2%B3%E6%9C%9B%E5%B2%B3%E5%8F%B0&query_place_id=ChIJmyaJBfUuc18RDEYfrZvEDCY" target="_blank" rel="noopener">十勝岳望岳台</a>：紅葉＋（運氣好）初冠雪
-      <span class="menu">📍 海拔 930m 的活火山展望台，可近看十勝岳噴氣孔；10 月初前後是紅葉高峰｜免費停車、24 小時開放，旁有防災資訊中心</span>
-      <span class="move car">🚗 約 25 分</span></div></div>
-    <div class="step"><time>17:00</time><div class="what">開回旭川方向
-      <span class="move car">🚗 約 45 分</span></div></div>
-    <div class="step"><time>18:00</time><div class="what">回旭川、停車
-      <span class="move car">🚗 約 10 分</span></div></div>
+        <div class="step"><time>08:30</time><div class="what">開車前往<a class="shop" href="https://www.google.com/maps/search/?api=1&query=%E6%97%AD%E5%B2%B3%E3%83%AD%E3%83%BC%E3%83%97%E3%82%A6%E3%82%A7%E3%82%A4&query_place_id=ChIJH-lrt7PXDF8RXBNa8gRGnAw" target="_blank" rel="noopener">旭岳纜車 山麓站</a>
+      <span class="menu">📍 北海道最高峰(2,291m)五合目直達纜車，約 20 分一班；來回約 ¥3,200（秋季價格以官網為準）｜8:30–16:30｜官網：<a class="shop" href="https://asahidake.hokkaido.jp/" target="_blank" rel="noopener">asahidake.hokkaido.jp</a></span>
+      <span class="move car">🚗 旭川 → 旭岳 約 1 小時 15 分</span>
+      <span class="note">🌤️ 東川町降水 30%、<b>2000m 風僅 8m/s</b>——四天裡風最小的一天，姿見池步道體感最舒服｜登山指數雖為 C（算的是攻頂條件），纜車觀光步道仍可行</span>
+      <button class="btn-tt" onclick="openTT('bus')">巴士時刻表（備用）</button>
+      <span class="note">📹 出發前看即時影像確認山頂雲況＋纜車運行：<a class="shop" href="https://asahidake.hokkaido.jp/ja/" target="_blank" rel="noopener">旭岳官方 Live</a>／<a class="shop" href="https://www.youtube.com/@asahidakeropeway" target="_blank" rel="noopener">YouTube 24h 直播</a></span></div></div>
+    <div class="step"><time>10:00</time><div class="what"><b>旭岳纜車</b>上姿見站（約 10 分）</div></div>
+    <div class="step"><time>10:15</time><div class="what"><b>姿見池步道</b>一圈約 1–1.5 小時
+      <span class="note">海拔 1600m，體感可能接近 0°C：手套、毛帽、防風外套必帶</span></div></div>
+    <div class="step"><time>12:30</time><div class="what">下山、<b>旭岳溫泉</b>泡日歸湯＋午餐</div></div>
+    <div class="step"><time>14:30</time><div class="what">順路繞天人峽・<a class="shop" href="https://www.google.com/maps/search/?api=1&query=%E7%BE%BD%E8%A1%A3%E3%81%AE%E6%BB%9D%20%E5%A4%A9%E4%BA%BA%E5%B3%A1&query_place_id=ChIJnxs-6ovWDF8Rk3S_JmwE15k" target="_blank" rel="noopener">羽衣瀑布</a>
+      <span class="menu">📍 北海道落差最大的瀑布(270m)，秋天峽谷紅葉超美；停車場走木棧道約 500m 即達，免費，還有免費足湯</span>
+      <span class="move car">🚗 約 30 分</span></div></div>
+    <div class="step"><time>16:30</time><div class="what">開回旭川、停車
+      <span class="move car">🚗 約 1 小時 15 分</span></div></div>
     <div class="step"><time>18:45</time><div class="what">晚餐：居酒屋<a class="shop" href="https://www.google.com/maps/search/?api=1&query=%E7%8B%AC%E9%85%8C%E4%B8%89%E5%9B%9B%E9%83%8E%20%E6%97%AD%E5%B7%9D&query_place_id=ChIJ5zitbQ7mDF8RuXf2UocQpwg" target="_blank" rel="noopener">独酌 三四郎</a>
       <span class="menu">🍶 必點：串燒（雞肉超推）、季節魚料理、老闆嚴選日本酒｜人均約 ¥4,000–6,000</span>
       <span class="note">17:00–20:50、週日一休（今天週五 OK）；熱門店建議請飯店代訂位；走路去，放心喝</span></div></div>
   </div>
-  <div class="warn">☀️ 25、26 兩天可互換——把天氣好的那天留給美瑛（景觀最吃天氣）。</div>
+  <div class="warn">🍁 山岳預報看「てんくら 大雪山・旭岳」的<b>登山指數 A/B/C</b>，前一天確認；A 就放心上山，C 建議改行程。</div>
 </section>
 
 <!-- 9/26 -->
+<!-- 9/25 -->
+<!-- 9/26 -->
 <section class="day" id="d26">
   <div class="day-head">
-    <div class="day-date">9/26</div><div class="day-title">旭岳紅葉 ★重點日</div>
+    <div class="day-date">9/26</div><div class="day-title">美瑛一日（騎車+丘陵）</div>
     <span class="day-tag tag-car">自駕</span>
   </div>
   <div class="steps">
-    <div class="step"><time>08:30</time><div class="what">開車前往<a class="shop" href="https://www.google.com/maps/search/?api=1&query=%E6%97%AD%E5%B2%B3%E3%83%AD%E3%83%BC%E3%83%97%E3%82%A6%E3%82%A7%E3%82%A4&query_place_id=ChIJH-lrt7PXDF8RXBNa8gRGnAw" target="_blank" rel="noopener">旭岳纜車 山麓站</a>
-      <span class="menu">📍 北海道最高峰(2,291m)五合目直達纜車，約 20 分一班；來回約 ¥3,200（秋季價格請以官網為準）｜8:30–16:30｜官網：<a class="shop" href="https://asahidake.hokkaido.jp/" target="_blank" rel="noopener">asahidake.hokkaido.jp</a></span>
-      <span class="move car">🚗 旭川 → 旭岳 約 1 小時 15 分</span>
-      <span class="note">紅葉旺季週六纜車站停車場會滿，早出發最保險</span>
-      <button class="btn-tt" onclick="openTT('bus')">巴士時刻表（備用）</button></div></div>
-    <div class="step"><time>10:00</time><div class="what"><b>旭岳纜車</b>上姿見站（約 10 分）</div></div>
-    <div class="step"><time>10:15</time><div class="what"><b>姿見池步道</b>一圈約 1–1.5 小時
-      <span class="note">海拔 1600m，山上可能接近 0°C，保暖衣物必帶</span></div></div>
-    <div class="step"><time>12:30</time><div class="what">下山、<b>旭岳溫泉</b>泡日歸湯＋午餐</div></div>
-    <div class="step"><time>14:30</time><div class="what">順路繞天人峽・<a class="shop" href="https://www.google.com/maps/search/?api=1&query=%E7%BE%BD%E8%A1%A3%E3%81%AE%E6%BB%9D%20%E5%A4%A9%E4%BA%BA%E5%B3%A1&query_place_id=ChIJnxs-6ovWDF8Rk3S_JmwE15k" target="_blank" rel="noopener">羽衣瀑布</a>（時間體力允許的話）
-      <span class="menu">📍 北海道落差最大的瀑布(270m)，秋天峽谷紅葉超美；停車場走木棧道約 500m 即達，免費，人少清幽，還有免費足湯</span>
-      <span class="move car">🚗 約 30 分</span></div></div>
-    <div class="step"><time>16:30</time><div class="what">開回旭川
-      <span class="move car">🚗 約 1 小時 15 分</span></div></div>
-    <div class="step"><time>17:50</time><div class="what"><a class="shop" href="https://www.google.com/maps/search/?api=1&query=%E7%A7%80%E5%B2%B3%E8%8D%98%20%E6%97%AD%E5%B7%9D&query_place_id=ChIJYUnkYV_vDF8RSr5aaSNWuiU" target="_blank" rel="noopener">秀岳荘 旭川店</a>（北海道傳奇戶外用品店）
-      <span class="menu">⛺ 登山滑雪露營裝備選品一流、店員都是玩家，白天剛爬完旭岳來逛最有感｜10:00–19:00、週六有開（週一休）</span>
-      <span class="move car">🚗 市區西側，回程順路，逛完停車場過夜</span></div></div>
-    <div class="step"><time>19:00</time><div class="what">晚餐：<a class="shop" href="https://www.google.com/maps/search/?api=1&query=%E6%88%90%E5%90%89%E6%80%9D%E6%B1%97%E5%A4%A7%E9%BB%92%E5%B1%8B%20%E6%9C%AC%E5%BA%97%20%E6%97%AD%E5%B7%9D&query_place_id=ChIJRf7PMgzmDF8Rm_3HyHkvjn0" target="_blank" rel="noopener">成吉思汗 大黑屋 本店</a> 烤羊肉
+    <div class="step"><time>08:00</time><div class="what">出發往美瑛（已有車）
+      <span class="note">🌤️ 美瑛全日降水 40%，但<b>白天 12–18 時只有 10%</b>——雨集中在傍晚以後，白天行程影響小</span></div></div>
+    <div class="step"><time>08:45</time><div class="what">🚲 <b>美瑛站前租電輔車，騎「拼布之路」一圈</b>（約 1 小時）
+      <span class="menu">🌾 精華段集中在站北 12–15km：<a class="shop" href="https://www.google.com/maps/search/?api=1&query=%E3%82%B1%E3%83%B3%E3%81%A8%E3%83%A1%E3%83%AA%E3%83%BC%E3%81%AE%E6%9C%A8%20%E7%BE%8E%E7%91%9B&query_place_id=ChIJSyHU2TTEDF8R2T5vc9zm5o4" target="_blank" rel="noopener">Ken & Mary 之木</a>、<a class="shop" href="https://www.google.com/maps/search/?api=1&query=%E3%82%BB%E3%83%96%E3%83%B3%E3%82%B9%E3%82%BF%E3%83%BC%E3%81%AE%E6%9C%A8%20%E7%BE%8E%E7%91%9B&query_place_id=ChIJC3IhmnLEDF8RDGL0pq7wdhE" target="_blank" rel="noopener">七星之木</a>、Mild Seven 之丘｜電輔車輕鬆爬坡，能隨時停在田邊拍照——這是開車做不到的</span>
+      <span class="note">🧤 早上約 9–12°C＋騎車風寒，手套、防風外套必備｜⚠️ 美瑛站周邊租車店多為 <b>09:00 開門</b>，且 9 月底電輔車數量有限——建議前一天先打電話確認開門時間與預留車輛，或把出發時間往後挪 15 分</span>
+      <span class="move car">🚗 旭川 → 美瑛站 約 40 分</span></div></div>
+    <div class="step"><time>10:15</time><div class="what">還腳踏車，換回開車</div></div>
+    <div class="step"><time>10:50</time><div class="what">午餐：<a class="shop" href="https://www.google.com/maps/search/?api=1&query=%E6%B4%8B%E9%A3%9F%E3%81%A8%E3%82%AB%E3%83%95%E3%82%A7%E3%81%98%E3%82%85%E3%82%93%E3%81%BA%E3%81%84%20%E7%BE%8E%E7%91%9B&query_place_id=ChIJrQEV1cTFDF8RsCT_OzBZN-g" target="_blank" rel="noopener">洋食とカフェ じゅんぺい</a>（美瑛町中心）
+      <span class="menu">🍤 必點：海老丼（大隻炸蝦+特製醬汁）、炸豬排、雞肉捲｜人均約 ¥1,500–2,000｜11:00–15:00</span>
+      <span class="note">超人氣店開店即滿：10:50 到門口排第一輪最穩，晚來蝦子可能賣完</span></div></div>
+    <div class="step"><time>12:15</time><div class="what"><a class="shop" href="https://www.google.com/maps/search/?api=1&query=%E5%9B%9B%E5%AD%A3%E5%BD%A9%E3%81%AE%E4%B8%98%20%E7%BE%8E%E7%91%9B&query_place_id=ChIJDeIPuVXIDF8RPhiBRw83_ag" target="_blank" rel="noopener">四季彩之丘</a>
+      <span class="menu">📍 15 公頃花田+羊駝牧場，秋季看波斯菊、鼠尾草｜門票 ¥500、8:40–17:30</span>
+      <span class="move car">🚗 約 10 分</span></div></div>
+    <div class="step"><time>13:15</time><div class="what">🐄 <a class="shop" href="https://www.google.com/maps/search/?api=1&query=%E7%BE%8E%E7%91%9B%E6%94%BE%E7%89%A7%E9%85%AA%E8%BE%B2%E5%A0%B4&query_place_id=ChIJJW25s6PJDF8RfVKJ-JHdd70" target="_blank" rel="noopener">美瑛放牧酪農場</a> 🌟4.4
+      <span class="menu">🧀 丘陵放牧牛群＋戶外座位｜必吃：<b>烤起司(raclette)吐司</b>、純牛奶霜淇淋；可看起司製程與熟成窖｜10:00–16:00 每天營業</span>
+      <span class="note">⚠️ 烤起司吐司常賣完，想吃就早點到；價格偏高但景觀值得</span>
+      <span class="move car">🚗 約 15 分</span></div></div>
+    <div class="step"><time>14:30</time><div class="what"><a class="shop" href="https://www.google.com/maps/search/?api=1&query=%E7%99%BD%E9%87%91%E9%9D%92%E3%81%84%E6%B1%A0%20%E7%BE%8E%E7%91%9B&query_place_id=ChIJbyoi3mLMDF8RnndLnx8YzQQ" target="_blank" rel="noopener">青池</a> → <a class="shop" href="https://www.google.com/maps/search/?api=1&query=%E7%99%BD%E3%81%B2%E3%81%92%E3%81%AE%E6%BB%9D%20%E7%BE%8E%E7%91%9B&query_place_id=ChIJX3VG4K7MDF8RJmYvjz6VBgU" target="_blank" rel="noopener">白鬚瀑布</a>
+      <span class="menu">📍 青池：夢幻土耳其藍池水+枯木，晴天最藍｜停車 ¥500｜白鬚瀑布免費，兩點車程 5 分</span>
+      <span class="move car">🚗 約 20 分</span></div></div>
+    <div class="step"><time>16:00</time><div class="what">開回旭川、停車過夜
+      <span class="move car">🚗 約 50 分</span></div></div>
+        <div class="step"><time>18:30</time><div class="what">晚餐：<a class="shop" href="https://www.google.com/maps/search/?api=1&query=%E6%88%90%E5%90%89%E6%80%9D%E6%B1%97%E5%A4%A7%E9%BB%92%E5%B1%8B%20%E6%9C%AC%E5%BA%97%20%E6%97%AD%E5%B7%9D&query_place_id=ChIJRf7PMgzmDF8Rm_3HyHkvjn0" target="_blank" rel="noopener">成吉思汗 大黑屋 本店</a> 烤羊肉
       <span class="menu">🐑 必點：生ラム肩ロース（生羊肩里肌）、大黑套餐、羊肉香腸｜人均約 ¥2,500–3,500｜配白飯+生蛋+醬油是行家吃法</span>
-      <span class="note">14:30 就開門、不接受訂位、抽號碼牌制；旭岳回來停好車走路去，晚餐尖峰約等 30 分</span></div></div>
+      <span class="note">14:30 就開門、不接受訂位、抽號碼牌制；停好車走路去，晚餐尖峰約等 30 分</span></div></div>
   </div>
-  <div class="warn">🍁 紅葉備案：若出發前查 tenki.jp 發現旭岳狀況不佳，改去層雲峽・黑岳（見頃 9 月下旬–10 月中旬）。</div>
+  <div class="warn">🌋 <b>十勝岳噴火警戒等級 3（入山規制，2026/9/12 起）</b>：火口約 3km 範圍禁止進入，<b>望岳台已從行程移除</b>。美瑛岳・美瑛富士方面多條登山道也設有禁入點。青池・白鬚瀑布・白金溫泉距火口較遠，目前仍可前往，但<b>出發前務必再查美瑛町與氣象廳最新公告</b>（狀況可能升級）。<br>🚲 騎車只挑「拼布之路」：路線集中、起伏較緩，電輔車 1 小時剛好一圈。超廣角之路單程就 7km 以上，一小時不夠。<br>🌧️ 雨天備案：不騎車，改全程開車跑四季彩之丘・酪農場・青池。</div>
 </section>
 
 <!-- 9/27 -->
 <section class="day" id="d27">
   <div class="day-head">
-    <div class="day-date">9/27</div><div class="day-title">富良野騎車・還車日</div>
+    <div class="day-date">9/27</div><div class="day-title">層雲峽・黑岳・還車日</div>
     <span class="day-tag tag-car">自駕</span>
   </div>
   <div class="steps">
-    <div class="step"><time>08:30</time><div class="what">出發往富良野
-      <span class="move car">🚗 旭川 → 富良野 約 1 小時</span></div></div>
-    <div class="step"><time>09:30</time><div class="what"><b>租腳踏車</b>鄉間騎行：富良野葡萄酒工廠 → <a class="shop" href="https://www.google.com/maps/search/?api=1&query=%E5%AF%8C%E8%89%AF%E9%87%8E%E3%83%81%E3%83%BC%E3%82%BA%E5%B7%A5%E6%88%BF&query_place_id=ChIJR0W0-2NSc18R0Q545HM0ANE" target="_blank" rel="noopener">富良野起司工房</a>（可 DIY）
-      <span class="menu">📍 起司工房：免費參觀製程+試吃，可報名起司/冰淇淋 DIY（現場二樓櫃台預約，一早去搶最早場次）；披薩工房的現烤披薩很有名｜9:00–17:00</span>
-      <span class="note">氣溫約 15–20°C，帶防風外套</span></div></div>
-    <div class="step"><time>12:00</time><div class="what">午餐：<a class="shop" href="https://www.google.com/maps/search/?api=1&query=%E5%94%AF%E6%88%91%E7%8B%AC%E5%B0%8A%20%E5%AF%8C%E8%89%AF%E9%87%8E&query_place_id=ChIJHQMlUW9Nc18RsMfqn_MK3WY" target="_blank" rel="noopener">唯我独尊</a> 富良野蛋包咖哩飯
-      <span class="menu">🍛 必點：香腸蛋包咖哩約 ¥1,300–1,500｜加咖哩醬免費，跟店員喊「ル・ル・ル♪」是名場面｜週一休（今天週日 OK）</span></div></div>
-    <div class="step"><time>13:30</time><div class="what"><a class="shop" href="https://www.google.com/maps/search/?api=1&query=%E4%BA%94%E9%83%8E%E3%81%AE%E7%9F%B3%E3%81%AE%E5%AE%B6%20%E9%BA%93%E9%83%B7&query_place_id=ChIJkdGQgdVOc18RmIZ4noZywKE" target="_blank" rel="noopener">麓郷「五郎石之家」</a>一帶
-      <span class="menu">📍 國民劇《來自北國》的拍攝場景，石之家+最初之家；套票 ¥1,200 可連看「拾來之家」等三處｜9:30–17:00</span>
-      <span class="move car">🚗 約 25 分</span></div></div>
-    <div class="step"><time>15:30</time><div class="what">開回旭川
-      <span class="move car">🚗 約 1 小時 10 分（16:40 前後到）</span>
-      <span class="note">趁天亮開國道 237，比摸黑回程安全（秋天入夜山路有鹿）</span></div></div>
-    <div class="step"><time>17:00</time><div class="what">加滿油、站前<b>還車</b>（4 天租期結束，18:00 前完成）
-      <span class="note">還車時間充裕；先確認租車公司還車櫃檯營業時間</span></div></div>
+    <div class="step"><time>07:30</time><div class="what">早出發往層雲峽
+      <span class="move car">🚗 旭川 → 層雲峽 約 1 小時 30 分（國道39號／道央道）</span>
+      <span class="note">🌤️ 上川町降水 <b>30%</b>（9/26 是 60%，所以擺這天）、1500m 風僅 5m/s——開放式吊椅停駛風險低｜但最冷：1500m 約 3°C，保暖務必到位</span></div></div>
+    <div class="step"><time>09:00</time><div class="what"><a class="shop" href="https://www.google.com/maps/search/?api=1&query=%E9%BB%92%E5%B2%B3%E3%83%AD%E3%83%BC%E3%83%97%E3%82%A6%E3%82%A7%E3%82%A4%20%E5%B1%A4%E9%9B%B2%E5%B3%A1" target="_blank" rel="noopener">黑岳纜車</a>（層雲峽 → 5合目）
+      <span class="menu">🚡 纜車約 7 分到 5合目(1300m)，有展望台；再轉<b>雙人吊椅</b>約 15 分上 7合目(1520m)｜纜車來回約 ¥2,400、＋吊椅約 ¥800｜紅葉見頃 9 月下旬–10 月中旬，正是這時候</span></div></div>
+    <div class="step"><time>09:45</time><div class="what"><b>7合目展望・散策</b>（想攻頂再往上約 1 小時，量力而為）
+      <span class="note">不想爬就在 5合目展望台看紅葉也很值；吊椅是開放式的，風大會停駛，屆時看纜車是否照常</span></div></div>
+    <div class="step"><time>11:45</time><div class="what">下山、層雲峽溫泉街午餐
+      <span class="note">溫泉街有食堂、咖啡；想泡湯可選黑岳の湯（日歸溫泉）</span></div></div>
+    <div class="step"><time>13:00</time><div class="what"><a class="shop" href="https://www.google.com/maps/search/?api=1&query=%E6%B5%81%E6%98%9F%E3%81%AE%E6%BB%9D%20%E9%8A%80%E6%B2%B3%E3%81%AE%E6%BB%9D%20%E5%B1%A4%E9%9B%B2%E5%B3%A1" target="_blank" rel="noopener">流星瀑布・銀河瀑布</a>（雙瀑台）
+      <span class="menu">📍 日本瀑布百選；停車場即可觀賞，走「雙瀑台」展望步道約 20 分可同時看到兩瀑＋峽谷紅葉｜免費</span>
+      <span class="move car">🚗 約 5 分</span></div></div>
+    <div class="step"><time>13:45</time><div class="what"><a class="shop" href="https://www.google.com/maps/search/?api=1&query=%E5%A4%A7%E5%87%BD%20%E5%B1%A4%E9%9B%B2%E5%B3%A1" target="_blank" rel="noopener">大函</a> 柱狀節理峽谷（時間允許）
+      <span class="menu">📍 高聳岩壁＋秋色，層雲峽最經典的峽谷地形，停車場走幾分鐘即達｜免費</span>
+      <span class="move car">🚗 約 10 分</span></div></div>
+    <div class="step"><time>14:20</time><div class="what">開回旭川
+      <span class="move car">🚗 約 1 小時 30 分（15:50 前後到）</span></div></div>
+    <div class="step"><time>16:30</time><div class="what">加滿油、站前<b>還車</b>（4 天租期結束，18:00 前完成）
+      <span class="note">時間充裕；先確認租車公司還車櫃檯營業時間</span></div></div>
     <div class="step"><time>19:00</time><div class="what">晚餐：居酒屋<a class="shop" href="https://www.google.com/maps/search/?api=1&query=%E5%A4%A9%E9%87%91%20%E5%B1%85%E9%85%92%E5%B1%8B%20%E6%97%AD%E5%B7%9D%204%E6%9D%A1&query_place_id=ChIJvV8kjw3mDF8R_vVotg8cpWk" target="_blank" rel="noopener">天金</a>（4条通7丁目）🌟4.1
-      <span class="menu">🍢 老字號大眾割烹：串燒、生魚片拼盤、天婦羅、壽司通通有；旭川靈魂食物「新子焼き」（半雞炭烤）必點｜人均約 ¥3,500–5,000｜15:00–22:30、週三休（今天週日 OK）</span>
-      <span class="note">離 AMANEK 步行約 7 分，還完車走路去、開到 22:30 完全不趕｜超熱門：請飯店幫忙訂位（有旅客連吃三晚都要先訂）｜備案：奥芝商店湯咖哩（計程車約 ¥1,200、週日開到 21:00）</span></div></div>
+      <span class="menu">🍢 老字號大眾割烹：串燒、生魚片拼盤、天婦羅、壽司；旭川靈魂食物「新子焼き」（半雞炭烤）必點｜人均約 ¥3,500–5,000｜15:00–22:30、週三休（今天週日 OK）</span>
+      <span class="note">離 AMANEK 步行約 7 分，還完車走路去｜請飯店幫忙訂位｜備案：奥芝商店湯咖哩</span></div></div>
   </div>
-  <div class="warn">🌧️ 雨天備案：富良野葡萄酒工廠試飲＋風之花園森林步道（小雨可走）。</div>
+  <div class="warn">🌧️ 雨天/停駛備案：層雲峽即使纜車停駛，流星・銀河瀑布和大函在路邊就能看，仍值得跑一趟。<br>⛰️ 前一天查「てんくら 大雪山・黒岳」登山指數，C 就考慮跟 9/24 逛街日對調。</div>
 </section>
 
-<!-- 9/27 -->
-
-
+<!-- 9/26 -->
 <!-- 9/28 -->
 <section class="day" id="d28">
   <div class="day-head">
@@ -370,6 +418,8 @@
     <span class="day-tag tag-bus">巴士</span>
   </div>
   <div class="steps">
+    <div class="step"><time>08:00</time><div class="what">飯店早餐、<b>check-out</b>
+      <span class="note">AMANEK 離巴士站步行 5 分；行李可先寄放櫃台，但 08:50 就要發車，建議直接拖過去</span></div></div>
     <div class="step"><time>08:50</time><div class="what">旭川站前 ⑨ 乘車處搭 <b>たいせつライナー</b>直達新千歲
       <span class="move">🚌 約 2 小時 45 分（11:35 到）｜¥4,500（早鳥 ¥4,200）</span>
       <button class="btn-tt" onclick="openTT('liner')">たいせつライナー時刻表</button>
@@ -381,6 +431,30 @@
   </div>
   <div class="warn">🚆 備案：若巴士客滿或大雪/事故停駛，改搭 JR（旭川 08:00 前後的特急 → 札幌轉快速 Airport，約 11:00–11:30 到機場），班次多不怕沒車。</div>
 </section>
+
+<div class="flex">
+  <h2>🍜 濃厚拉麵口袋清單（備選）</h2>
+  <div class="lead">旭川本地是清爽醬油系；以下是少數走<b>豚骨/雞白湯/家系</b>濃厚路線的店，臨時想吃再來。多在豊岡・永山一帶（市區東側，跟燒肉スグル同方向）。</div>
+
+  <div class="drow">
+    <span class="wx wx-sun">雞白湯</span>
+    <div class="dname"><b><a class="shop" href="https://www.google.com/maps/search/?api=1&query=%E9%BA%BA%E3%82%84%20%E3%81%95%E3%81%BE%E3%81%96%E3%81%8F%E3%82%89%20%E6%97%AD%E5%B7%9D&query_place_id=ChIJlx-qDwDnDF8RtCqiwg3oxLM" target="_blank" rel="noopener">麺や さまざくら</a></b> 🌟4.4<span>招牌雞白湯，上品又濃郁、細麵掛湯｜⚠️ 只開午餐 11:00–15:00、週一休｜豊岡2条</span></div>
+  </div>
+  <div class="drow">
+    <span class="wx wx-sun">濃豚骨</span>
+    <div class="dname"><b><a class="shop" href="https://www.google.com/maps/search/?api=1&query=Koshinoya%20%E6%97%AD%E5%B7%9D%20%E8%B1%8A%E5%B2%A1&query_place_id=ChIJWQ_2e1rmDF8RrZsN8SJETaU" target="_blank" rel="noopener">こしのや Koshinoya</a></b> 🌟4.3<span>醬油+背脂濃厚系，被讚北海道數一數二｜11:00–14:00 / 17:00–20:00、週一休｜豊岡6条</span></div>
+  </div>
+  <div class="drow">
+    <span class="wx wx-any">家系</span>
+    <div class="dname"><b><a class="shop" href="https://www.google.com/maps/search/?api=1&query=%E6%A8%AA%E6%B5%9C%E5%AE%B6%E7%B3%BB%20%E6%AD%A6%E7%94%B0%E5%AE%B6%20%E6%97%AD%E5%B7%9D&query_place_id=ChIJJ-pbm7DnDF8R4hbQuEktx-c" target="_blank" rel="noopener">橫濱家系 武田家</a></b> 🌟3.9<span>濃厚豚骨醬油+粗麵，最接近你熟悉的口味；可講簡單英文、開到 22:00（晚餐可）｜3条通</span></div>
+  </div>
+  <div class="drow">
+    <span class="wx wx-any">家系</span>
+    <div class="dname"><b><a class="shop" href="https://www.google.com/maps/search/?api=1&query=%E6%A8%AA%E6%BF%B1%E5%AE%B6%E7%B3%BB%20%E7%B9%94%E7%94%B0%E5%AE%B6%20%E6%97%AD%E5%B7%9D&query_place_id=ChIJfYmR5ZXnDF8RqLWJ6-fv4YU" target="_blank" rel="noopener">橫濱家系 織田家</a></b> 🌟3.7<span>停車位多、開到半夜，晚場/深夜想吃很方便｜大雪通</span></div>
+  </div>
+
+  <div class="rule">📌 午餐限定的兩家（さまざくら・こしのや）若想吃，最順的是塞進 <b>9/24 逛街日午餐</b>（跟 Toriton 二選一，都在豊岡）。晚餐想吃就走家系（武田家/織田家）。</div>
+</div>
 
 </main>
 
