@@ -113,6 +113,11 @@
   .pl{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:11px 14px;margin-bottom:9px}
   .pl .n{font-size:14px;font-weight:700}
   .pl .m{font-size:12px;color:#7a5c1e;background:#faf5e8;border-radius:7px;padding:4px 9px;margin-top:5px;display:block}
+  .myp{background:#fffdf7;border:1px solid #ecd9ae;border-radius:12px;padding:11px 14px;margin-bottom:9px;position:relative}
+  .myp .n{font-size:14px;font-weight:700;padding-right:26px}
+  .myp .m{font-size:12px;color:#7a5c1e;margin-top:5px;display:block;white-space:pre-wrap}
+  .myp .x{position:absolute;top:8px;right:10px;background:none;border:none;color:#c9b8a8;font-size:18px;cursor:pointer;padding:0 3px;line-height:1}
+  .myp .tagd{font-size:10.5px;font-weight:800;color:var(--maple);display:inline-block;margin-bottom:3px}
   .grp{font-size:13px;font-weight:800;color:var(--maple);margin:16px 0 8px;letter-spacing:.04em}
   .mny input,.mny select{
     font-family:inherit;font-size:14px;padding:9px 10px;border:1px solid var(--line);
@@ -658,6 +663,30 @@
 <div class="flex">
   <h2>📍 儲存地點</h2>
   <div class="lead">沒排進行程、但臨時想去就有得選。點店名直接開 Google Maps 導航。</div>
+  <div class="grp">➕ 我自己加的地點</div>
+  <div class="mny">
+    <div class="row3">
+      <input id="mp-name" type="text" placeholder="名稱（例：某某壽司）">
+      <select id="mp-day">
+        <option value="未分類">未分類</option>
+        <option value="9/23">9/23 抵達</option>
+        <option value="9/24">9/24 市區</option>
+        <option value="9/25">9/25 美瑛</option>
+        <option value="9/26">9/26 旭岳</option>
+        <option value="9/27">9/27 黑岳</option>
+        <option value="9/28">9/28 回程</option>
+      </select>
+    </div>
+    <div class="row3" style="grid-template-columns:1fr">
+      <input id="mp-note" type="text" placeholder="備註：地址、必點、營業時間…（可留空）">
+    </div>
+    <button class="add" id="mp-add">＋ 加入清單</button>
+  </div>
+  <div style="font-size:11.5px;color:var(--mist);margin:8px 0 14px;line-height:1.6">
+    💡 名稱會自動產生 Google Maps 連結，點了直接導航。資料存在這支手機裡；「記帳」分頁的匯出備份也會一起帶走。
+  </div>
+  <div id="mp-list"></div>
+
   <div class="grp">🍽️ 順路餐廳（依行程日排）</div>
 
   <div style="font-size:11.5px;color:var(--maple);font-weight:800;margin:10px 0 6px">9/25 美瑛日</div>
@@ -754,7 +783,7 @@
       <button id="m-clear" style="flex:1;min-width:110px;background:none;border:1px solid var(--line);border-radius:8px;padding:8px 10px;font-size:12px;color:var(--mist);font-family:inherit;cursor:pointer">清空紀錄</button>
     </div>
     <div style="font-size:11.5px;color:var(--mist);margin-top:10px;line-height:1.7">
-      💾 <b>資料存在哪裡？</b>記帳與打勾都存在<b>你這支手機的這個瀏覽器裡</b>（localStorage），下次打開網頁資料還在。<br>
+      💾 <b>資料存在哪裡？</b>記帳、打勾、自訂地點都存在<b>你這支手機的這個瀏覽器裡</b>（localStorage），下次打開網頁資料還在。<br>
       · <b>每個人各自獨立</b>——同行五人各看各的，不會互相影響，也不會同步。<br>
       · 換手機、換瀏覽器（Safari↔Chrome）、開無痕模式 → <b>看不到舊資料</b>。<br>
       · 清除瀏覽器資料／網站資料會一併刪掉，iOS Safari 長期沒開也可能自動清除。<br>
@@ -1068,6 +1097,51 @@ document.getElementById('fc-sync').onclick=function(){
   });
 };
 
+
+/* ---------- my places ---------- */
+var MPK='ahk_myplaces';
+function mpLoad(){try{return JSON.parse(localStorage.getItem(MPK)||'[]')}catch(e){return[]}}
+function mpSave(a){try{localStorage.setItem(MPK,JSON.stringify(a))}catch(e){}}
+function esc(s){return String(s).replace(/[<>&"]/g,function(c){return({'<':'&lt;','>':'&gt;','&':'&amp;','"':'&quot;'})[c]})}
+function mpRender(){
+  var a=mpLoad(), L=document.getElementById('mp-list');
+  if(!L) return;
+  if(!a.length){ L.innerHTML='<div class="rule" style="margin-bottom:14px">還沒有自訂地點。旅途中看到想去的店，加進來就不會忘。</div>'; return; }
+  var html='';
+  a.forEach(function(p,i){
+    var q=encodeURIComponent(p.name+' 北海道');
+    html+='<div class="myp">'+
+      (p.day&&p.day!=='未分類'?'<span class="tagd">'+esc(p.day)+'</span><br>':'')+
+      '<div class="n"><a class="shop" href="https://www.google.com/maps/search/?api=1&query='+q+'" target="_blank" rel="noopener">'+esc(p.name)+'</a></div>'+
+      (p.note?'<span class="m">'+esc(p.note)+'</span>':'')+
+      '<button class="x" data-i="'+i+'">×</button></div>';
+  });
+  L.innerHTML=html;
+  L.querySelectorAll('.x').forEach(function(b){
+    b.onclick=function(){
+      if(!confirm('刪除這個地點？')) return;
+      var a=mpLoad(); a.splice(+b.dataset.i,1); mpSave(a); mpRender();
+    };
+  });
+}
+(function(){
+  var add=document.getElementById('mp-add');
+  if(!add) return;
+  add.onclick=function(){
+    var n=document.getElementById('mp-name').value.trim();
+    if(!n){ alert('請輸入名稱'); return; }
+    var a=mpLoad();
+    a.unshift({name:n, day:document.getElementById('mp-day').value,
+               note:document.getElementById('mp-note').value.trim()});
+    mpSave(a);
+    document.getElementById('mp-name').value='';
+    document.getElementById('mp-note').value='';
+    mpRender();
+  };
+  document.getElementById('mp-name').addEventListener('keydown',function(e){ if(e.key==='Enter') add.click(); });
+  mpRender();
+})();
+
 /* ---------- money ---------- */
 var MK='ahk_money';
 function mLoad(){try{return JSON.parse(localStorage.getItem(MK)||'[]')}catch(e){return[]}}
@@ -1111,7 +1185,7 @@ document.getElementById('m-add').onclick=function(){
 document.getElementById('m-rate').oninput=mRender;
 
 document.getElementById('m-export').onclick=function(){
-  var data={money:mLoad(),checks:{}};
+  var data={money:mLoad(),places:mpLoad(),checks:{}};
   document.querySelectorAll('.chk input').forEach(function(c){ data.checks[c.dataset.k]=c.checked; });
   var blob=new Blob([JSON.stringify(data,null,2)],{type:'application/json'});
   var a=document.createElement('a');
@@ -1128,6 +1202,7 @@ document.getElementById('m-import').onclick=function(){
       try{
         var d=JSON.parse(r.result);
         if(Array.isArray(d.money)) mSave(d.money);
+        if(Array.isArray(d.places)){ mpSave(d.places); mpRender(); }
         if(d.checks) document.querySelectorAll('.chk input').forEach(function(c){
           if(c.dataset.k in d.checks){ c.checked=!!d.checks[c.dataset.k]; store('ahk_'+c.dataset.k, c.checked?'1':'0'); }
         });
