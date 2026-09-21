@@ -876,6 +876,53 @@ var WMO={0:'☀️',1:'🌤️',2:'⛅',3:'☁️',45:'🌫️',48:'🌫️',51:
 var TRIP=['09-23','09-24','09-25','09-26','09-27','09-28'];
 var PLAN={'09-23':'抵達','09-24':'市區','09-25':'美瑛','09-26':'旭岳','09-27':'黑岳','09-28':'回程'};
 var wxDone=false;
+function loadWx(force){
+  if(wxDone && !force) return;
+  wxDone=true;
+  var box=document.getElementById('wxbox');
+  box.innerHTML='<div class="rule">載入中…（最多等 12 秒）</div>';
+  var la=SPOTS.map(function(s){return s.la}).join(','), lo=SPOTS.map(function(s){return s.lo}).join(',');
+  var url='https://api.open-meteo.com/v1/forecast?latitude='+la+'&longitude='+lo+
+    '&daily=weather_code,temperature_2m_max,temperature_2m_min,precipitation_probability_max,wind_speed_10m_max'+
+    '&timezone=Asia%2FTokyo&forecast_days=10';
+  var timeout=new Promise(function(_,rej){ setTimeout(function(){rej(new Error('timeout'))},12000); });
+  Promise.race([fetch(url).then(function(r){
+      if(!r.ok) throw new Error('HTTP '+r.status);
+      return r.json();
+    }), timeout])
+  .then(function(js){
+    var arr = Array.isArray(js)?js:[js]; var out='';
+    arr.forEach(function(d,i){
+      var dy=d.daily; if(!dy||!dy.time){return}
+      out+='<div class="wx-card"><h3>'+SPOTS[i].n+'</h3><div class="wx-scroll">';
+      for(var j=0;j<dy.time.length;j++){
+        var md=dy.time[j].slice(5);
+        var hi=TRIP.indexOf(md)>=0?' hi':'';
+        var w=new Date(dy.time[j]+'T00:00:00').getDay();
+        var wk=['日','一','二','三','四','五','六'][w];
+        var tag=PLAN[md]||'';
+        out+='<div class="wx-col'+hi+'">'+
+          '<span class="d">'+md.replace('-','/')+'<span class="wd">('+wk+')</span></span>'+
+          '<div class="e">'+(WMO[dy.weather_code[j]]||'·')+'</div>'+
+          '<div class="hl">'+Math.round(dy.temperature_2m_max[j])+'°<br><i>'+Math.round(dy.temperature_2m_min[j])+'°</i></div>'+
+          '<div class="p">☔'+(dy.precipitation_probability_max[j]==null?'–':dy.precipitation_probability_max[j]+'%')+'</div>'+
+          '<div class="w">💨'+Math.round(dy.wind_speed_10m_max[j]/3.6)+'</div>'+
+          (tag?'<div class="tag">'+tag+'</div>':'')+
+          '</div>';
+      }
+      out+='</div><div class="src">↔ 左右滑動看更多天　·　資料來源：<a href="https://open-meteo.com/" target="_blank" rel="noopener">Open-Meteo</a>（日本區以 JMA 模式為主）·　更新：'+
+        new Date().toLocaleString('zh-TW',{month:'numeric',day:'numeric',hour:'2-digit',minute:'2-digit'})+'</div></div>';
+    });
+    box.innerHTML = out || '<div class="rule">沒有取得資料。<a href="javascript:void(0)" onclick="loadWx(true)">重試</a></div>';
+  })
+  .catch(function(e){
+    wxDone=false;
+    box.innerHTML='<div class="rule">⚠️ 無法載入即時天氣（'+(e&&e.message||'連線失敗')+'）。'+
+      '本機預覽或離線時會這樣，<b>放上 GitHub Pages 通常就正常</b>。<br>'+
+      '<a class="idxbtn" style="margin-top:8px" href="javascript:void(0)" onclick="loadWx(true)">🔄 重新載入</a>'+
+      '出發前也可直接看：<a class="shop" href="https://tenki.jp/forecast/1/11/1200/1204/" target="_blank" rel="noopener">tenki.jp 旭川</a>／<a class="shop" href="https://tenki.jp/leisure/1/1/11/120533/10days.html" target="_blank" rel="noopener">美瑛 10 日</a>。</div>';
+  });
+}
 function embed(btnId, boxId, url, label){
   var b=document.getElementById(btnId), box=document.getElementById(boxId);
   b.onclick=function(){
