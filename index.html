@@ -113,6 +113,22 @@
   .pl{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:11px 14px;margin-bottom:9px}
   .pl .n{font-size:14px;font-weight:700}
   .pl .m{font-size:12px;color:#7a5c1e;background:#faf5e8;border-radius:7px;padding:4px 9px;margin-top:5px;display:block}
+  .jump{
+    position:sticky;top:0;z-index:40;margin:0 -18px 10px;padding:9px 18px 8px;
+    background:rgba(242,239,231,.97);backdrop-filter:blur(6px);
+    border-bottom:1px solid var(--line);
+  }
+  .jump .rowj{display:flex;gap:6px;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;padding-bottom:1px}
+  .jump .rowj::-webkit-scrollbar{display:none}
+  .jump .rowj + .rowj{margin-top:6px}
+  .jump a{
+    flex:0 0 auto;font-size:12px;font-weight:700;text-decoration:none;white-space:nowrap;
+    border-radius:999px;padding:5px 11px;border:1px solid var(--line);background:var(--card);color:var(--pine);
+  }
+  .jump a.t{color:var(--maple);border-color:#f0dcc9;background:#fffaf4}
+  .jump a:active{background:var(--pine);color:#fff;border-color:var(--pine)}
+  .jump .lbl{font-size:10px;font-weight:800;color:var(--mist);align-self:center;flex:0 0 auto;padding-right:2px}
+  .grp,.kd{scroll-margin-top:110px}
   .myp{background:#fffdf7;border:1px solid #ecd9ae;border-radius:12px;padding:11px 14px;margin-bottom:9px;position:relative}
   .myp .n{font-size:14px;font-weight:700;padding-right:26px}
   .myp .m{font-size:12px;color:#7a5c1e;margin-top:5px;display:block;white-space:pre-wrap}
@@ -295,7 +311,7 @@
 <div class="pane on" id="p-trip">
 <div class="flex">
   <h2>🔀 看天氣調度：整天對調原則</h2>
-  <div class="lead">四個自駕日（9/24–27）可視天氣<b>整包對調</b>。目前版本已按 9/20 預報最佳化：乾的日子給戶外、最濕的 9/26 給室內。出發前 2–3 天再對一次預報。</div>
+  <div class="lead">四個自駕日（9/24–27）可視天氣<b>整包對調</b>。<b>9/22 更新：9/26 與 9/27 兩座山全部都是 A</b>（9/24、9/28 皆 C）——目前排法正好卡在最佳的兩天，不用調動。出發前再對一次即可。</div>
   <div class="drow">
     <span class="wx wx-any">☁️ 不挑天氣</span>
     <div class="dname"><b>市區逛街日</b>（9/24）<span>取車＋AEON・岩泉優格・Toriton・永山購物（陀螺）・秀岳荘・燒肉・買物公園夜散步。旭岳指數 C、風 18m/s、美瑛降水 80%——最差的一天全室內避開</span></div>
@@ -305,12 +321,12 @@
     <div class="dname"><b>美瑛一日</b>（9/25）<span>電輔車騎拼布之路・四季彩之丘・放牧酪農場・青池。美瑛全週最乾的一天（20%）｜⚠️ 十勝岳火山警戒 3 級，望岳台已排除</span></div>
   </div>
   <div class="drow">
-    <span class="wx wx-sun">☀️ 最吃天氣 · 指數 A</span>
-    <div class="dname"><b>旭岳日</b>（9/26）<span>纜車+姿見池。<b>四天唯一攀升指數 A</b>：2000m 風 10m/s、6°C，全週登山條件最好</span></div>
+    <span class="wx wx-sun">☀️ 指數 A</span>
+    <div class="dname"><b>旭岳日</b>（9/26）<span>纜車+姿見池。<b>攀升指數 A</b>：2000m 風僅 4m/s、幾乎無風；偏冷（姿見約 4–6°C）</span></div>
   </div>
   <div class="drow">
-    <span class="wx wx-sun">☀️ 吃天氣 · 30%</span>
-    <div class="dname"><b>黑岳・層雲峽日</b>（9/27）<span>纜車+吊椅上 7合目。指數 C 但 <b>1500m 10°C、風僅 4m/s</b>，吊椅體感四天最舒服；含 18:00 前還車，7:30 出發仍從容</span></div>
+    <span class="wx wx-sun">☀️ 指數 A</span>
+    <div class="dname"><b>黑岳・層雲峽日</b>（9/27）<span>纜車+吊椅上 7合目。<b>指數 A</b>：1500m 9°C、風僅 3m/s，兩天裡較暖；含 18:00 前還車，7:30 出發仍從容</span></div>
   </div>
   <div class="rule">
     📌 <b>調度規則</b>：<br>
@@ -436,7 +452,7 @@
         <div class="step"><time>08:30</time><div class="what">開車前往<a class="shop" href="https://www.google.com/maps/search/?api=1&query=%E6%97%AD%E5%B2%B3%E3%83%AD%E3%83%BC%E3%83%97%E3%82%A6%E3%82%A7%E3%82%A4&query_place_id=ChIJH-lrt7PXDF8RXBNa8gRGnAw" target="_blank" rel="noopener">旭岳纜車 山麓站</a>
       <span class="menu">📍 北海道最高峰(2,291m)五合目直達纜車，約 20 分一班；來回約 ¥3,200（秋季價格以官網為準）｜8:30–16:30｜官網：<a class="shop" href="https://asahidake.hokkaido.jp/" target="_blank" rel="noopener">asahidake.hokkaido.jp</a></span>
       <span class="move car">🚗 旭川 → 旭岳 約 1 小時 15 分</span>
-      <span class="note">🌤️ <b>攀升指數 A</b>——這四天唯一的 A！2000m 風 10m/s、氣溫 6°C，是全週登山條件最好的一天（9/25 的 2000m 只有 0°C，冷得多）</span>
+      <span class="note">🌤️ <b>攀升指數 A</b>（9/22 更新）｜2000m <b>風僅 4m/s</b>、氣溫 2°C，3100m 風 8m/s——風小到幾乎無感，能見度條件全週最好之一<br>🧥 但也偏冷：姿見池(1600m)推估約 4–6°C，手套毛帽務必帶</span>
       <button class="btn-tt" onclick="openTT('bus')">巴士時刻表（備用）</button>
       <span class="note">📹 出發前看即時影像確認山頂雲況＋纜車運行：<a class="shop" href="https://asahidake.hokkaido.jp/ja/" target="_blank" rel="noopener">旭岳官方 Live</a>／<a class="shop" href="https://www.youtube.com/@asahidakeropeway" target="_blank" rel="noopener">YouTube 24h 直播</a></span></div></div>
     <div class="step"><time>10:00</time><div class="what"><b>旭岳纜車</b>上姿見站（約 10 分）</div></div>
@@ -465,7 +481,7 @@
   <div class="steps">
     <div class="step"><time>07:30</time><div class="what">早出發往層雲峽
       <span class="move car">🚗 旭川 → 層雲峽 約 1 小時 30 分（國道39號／道央道）</span>
-      <span class="note">🌤️ 攀升指數 C（雲量/降水造成，非強風）｜但實際體感是四天最舒服：<b>1500m 有 10°C、風僅 4m/s</b>，開放式吊椅完全沒問題｜9/26 雖是 A，但那天讓給旭岳了<br>🅿️ <b>紅葉季停車場很早就滿</b>：官方 9/20 早上 7:55 就公告第1・第2停車場滿車，滿了要停「層雲峽公共駐車場」。7:30 出發剛好，別再晚</span></div></div>
+      <span class="note">🌤️ <b>攀升指數 A</b>（9/22 更新，已從 C 上修）｜1500m <b>9°C、風僅 3m/s</b>，2000m 8°C／6m/s——開放式吊椅在這種風下完全舒適，而且是兩天裡<b>比較暖的一天</b><br>🅿️ <b>紅葉季停車場很早就滿</b>：官方 9/20 早上 7:55 就公告第1・第2停車場滿車，滿了要停「層雲峽公共駐車場」。7:30 出發剛好，別再晚</span></div></div>
     <div class="step"><time>09:00</time><div class="what"><a class="shop" href="https://www.google.com/maps/search/?api=1&query=%E9%BB%92%E5%B2%B3%E3%83%AD%E3%83%BC%E3%83%97%E3%82%A6%E3%82%A7%E3%82%A4%20%E5%B1%A4%E9%9B%B2%E5%B3%A1" target="_blank" rel="noopener">黑岳纜車</a>（層雲峽 → 5合目）
       <span class="menu">🚡 纜車約 7 分到 5合目(1300m)，20 分一班、101 人座；再轉<b>雙人吊椅</b>上 7合目(1520m)｜<b>纜車來回 ¥3,000、吊椅來回 ¥1,200，套票來回 ¥3,900</b>（買套票省 ¥300）｜纜車 6:00–18:00（上行末班 17:20）、吊椅 6:30–17:30（上行末班 17:00）｜紅葉見頃 9 月下旬–10 月中旬</span></div></div>
     <div class="step"><time>09:45</time><div class="what"><b>7合目展望・散策</b>（想攻頂再往上約 1 小時，量力而為）
@@ -564,7 +580,7 @@
   <a class="idxbtn k" href="https://www.hokkaido-airports.com/zh-tw/new-chitose/airport/fis/" target="_blank" rel="noopener">🛬 新千歲機場 本日航班（回程櫃台）→</a>
   <a class="idxbtn live" href="https://www.taoyuan-airport.com/flight_arrival" target="_blank" rel="noopener">🧳 桃園機場 入境航班（行李轉盤）→</a>
 
-  <div class="grp">① 證件・錢</div>  <div class="grp">① 證件・錢</div>
+  <div class="grp">① 證件・錢</div>
   <label class="chk"><input type="checkbox" data-k="d1"><span class="t">護照（效期 6 個月以上）</span></label>
   <label class="chk"><input type="checkbox" data-k="d2"><span class="t">日本 <a class="shop" href="https://www.vjw.digital.go.jp/main/" target="_blank" rel="noopener">Visit Japan Web</a> 入境登錄<small>官方唯一網址 vjw.digital.go.jp（有很多山寨站要小心）｜免費、不強制，但先填好入境+海關的 2D 碼可走電子通關，落地跑得快——你 9/23 要趕 16:27 巴士｜每位旅客各自一組碼，姓名要跟護照完全一致</small></span></label>
   <label class="chk"><input type="checkbox" data-k="d3"><span class="t">駕照日文譯本 ＋ 台灣駕照正本<small>⚠️ 兩者缺一不可，租車一定會查</small></span></label>
@@ -628,7 +644,7 @@
   <div class="embnote">※ 黑岳纜車官網首頁就有<b>本日運行狀況（OPEN/運休）、山上氣溫風速、停車場空位、紅葉進度</b>，秋天假日停車場很早就滿，出發前務必先看。<br>※ 旭岳纜車官網會公告<b>當日運行狀況與強風停駛</b>，並有姿見駅即時影像——出發前一小時看這個最準。<br>※ 嵌入的是 てんくら（日本氣象株式会社）原始網頁，內容與更新時間以該站為準。頁面較寬，可在框內左右／上下滑動。</div>
   <div class="rule" style="margin-top:12px">
     🟢 A 適合登山　🟡 B 風或雨較強、稍不適合　🔴 C 不適合登山<br>
-    ⚠️ <b>C 不一定是風大</b>——旭岳 9/27 風僅 11/8m/s、黑岳 9/28 僅 5/2m/s 卻都是 C，那是降水與雲量造成的。你搭纜車走姿見池／5合目觀光步道，暴露程度遠低於攻頂，C 多半代表「看不看得到景」而非「上不上得去」。<br>
+    ⚠️ <b>C 不一定是風大</b>——曾出現風速很低卻仍判 C 的日子，那是降水與雲量造成的。你搭纜車走姿見池／5合目觀光步道，暴露程度遠低於攻頂，C 多半代表「看不看得到景」而非「上不上得去」。<br>
     ⏰ 官方週間預報後半段<b>一天只在凌晨 4 點左右更新一次</b>。
   </div>
 </div>
@@ -663,7 +679,15 @@
 <div class="flex">
   <h2>📍 儲存地點</h2>
   <div class="lead">沒排進行程、但臨時想去就有得選。點店名直接開 Google Maps 導航。</div>
-  <div class="grp">➕ 我自己加的地點</div>
+  <div class="jump">
+    <div class="rowj"><span class="lbl">地區</span>
+      <a href="#a-mine">我的</a><a href="#a-city">市區</a><a href="#a-east">東側</a><a href="#a-nw">西北</a><a href="#a-biei">美瑛</a><a href="#a-hig">東川/旭岳</a><a href="#a-sou">層雲峽</a>
+    </div>
+    <div class="rowj"><span class="lbl">類型</span>
+      <a class="t" href="#t-rest">🍽️餐廳</a><a class="t" href="#t-bbq">🥩燒肉</a><a class="t" href="#t-cafe">☕咖啡</a><a class="t" href="#t-sweet">🍮甜點</a><a class="t" href="#t-out">⛺戶外</a><a class="t" href="#t-ramen">🍜濃厚拉麵</a>
+    </div>
+  </div>
+  <div class="grp" id="a-mine">➕ 我自己加的地點</div>
   <div class="mny">
     <div class="row3">
       <input id="mp-name" type="text" placeholder="名稱（例：某某壽司）">
@@ -687,45 +711,59 @@
   </div>
   <div id="mp-list"></div>
 
-  <div class="grp">🍽️ 順路餐廳（依行程日排）</div>
+  <div class="grp" id="a-city">🏙️ 旭川市區・站前</div>
+  <div style="font-size:11.5px;color:var(--mist);margin:-4px 0 9px;line-height:1.6">住 AMANEK，以下多半走路或 10 分內車程可到</div>
+  <div class="kd" id="t-bbq" style="font-size:11.5px;color:var(--maple);font-weight:800;margin:12px 0 6px">🥩 燒肉・成吉思汗</div>
+  <div class="pl"><div class="n"><a class="shop" href="https://www.google.com/maps/search/?api=1&query=%E6%88%90%E5%90%89%E6%80%9D%E6%B1%97%E5%A4%A7%E9%BB%92%E5%B1%8B%20%E6%9C%AC%E5%BA%97%20%E6%97%AD%E5%B7%9D&query_place_id=ChIJRf7PMgzmDF8Rm_3HyHkvjn0" target="_blank" rel="noopener">成吉思汗 大黑屋 本店</a> 🌟4.5</div><span class="m">🐑 4条通5丁目｜烤羊肉名店、iPad 點餐｜15:00–23:30 每天｜不接受訂位、抽號碼牌｜<b style="color:var(--maple)">已排 9/26</b></span></div>
+  <div class="pl"><div class="n"><a class="shop" href="https://www.google.com/maps/search/?api=1&query=%E7%84%BC%E8%82%89%E9%8C%A6%E8%8A%B1%E6%A5%BC%20%E4%B8%80%E6%9D%A1%E5%BA%97%20%E6%97%AD%E5%B7%9D&query_place_id=ChIJ--BjtQ_mDF8RT9Yj6qHMZ6A" target="_blank" rel="noopener">焼肉 錦花樓 一条店</a> 🌟4.3</div><span class="m">🍖 1条通4丁目、<b>站前走得到</b>｜和牛/豬/羊都有，平板點餐可切英文｜評論：無預約要等 1 小時以上，強烈建議訂位｜午 11:30–14:30、晚 17:00–22:00</span></div>
+  <div class="pl"><div class="n"><a class="shop" href="https://www.google.com/maps/search/?api=1&query=%E7%84%BC%E8%82%89%E5%92%8C%E5%B3%B6%20%E6%97%AD%E5%B7%9D%202%E6%9D%A1%E9%80%9A&query_place_id=ChIJ3Uo15f7nDF8ROrsRjwZQrZs" target="_blank" rel="noopener">焼肉 和島</a> 🌟4.5</div><span class="m">🐄 2条通7丁目、站前區｜牛舌評價特別高、肉質軟嫩｜11:00–24:30 每天，<b>午餐也開</b>｜想吃牛不吃羊選這家</span></div>
+  <div class="kd" id="t-cafe" style="font-size:11.5px;color:var(--maple);font-weight:800;margin:12px 0 6px">☕ 咖啡廳</div>
+  <div class="pl"><div class="n"><a class="shop" href="https://www.google.com/maps/search/?api=1&query=NIDO%20COFFEE%20ROASTERY%20%E6%97%AD%E5%B7%9D&query_place_id=ChIJT13HZTAHDV8REJPiPEBcdc4" target="_blank" rel="noopener">NIDO COFFEE ROASTERY</a> 🌟4.7</div><span class="m">☕ 8条通2丁目｜自家烘焙，被讚「旭川最好的精品咖啡」；拿鐵、抹茶拿鐵都推｜<b>08:00 開</b>，出發前買一杯剛好｜週四・週日休</span></div>
+  <div class="pl"><div class="n"><a class="shop" href="https://www.google.com/maps/search/?api=1&query=%E7%A5%9E%E7%94%B0%E7%8F%88%E7%90%B2%E5%9C%92%20%E6%97%AD%E5%B7%9D&query_place_id=ChIJQ2rDmnPmDF8ROXy_XcdgHjI" target="_blank" rel="noopener">神田珈琲園</a> 🌟4.6</div><span class="m">🍞 9条通8丁目、<b>離飯店最近</b>｜48 年老喫茶，吐司與咖啡凍冰淇淋有名｜08:00–18:00、<b>六日休</b>｜9/24 或 9/25 早上最適合</span></div>
+  <div class="pl"><div class="n"><a class="shop" href="https://www.google.com/maps/search/?api=1&query=B.BROWN%20%E6%97%AD%E5%B7%9D%20%E7%A5%9E%E6%A5%BD&query_place_id=ChIJbc6H1UznDF8RZhk_M8swTlE" target="_blank" rel="noopener">B.BROWN</a> 🌟4.4</div><span class="m">🍛 神楽3条、站前步行可到｜咖啡店但<b>咖哩才是招牌</b>：炸豬排咖哩份量驚人；飯後送咖啡糖｜11:00–18:30、週三四休</span></div>
+  <div class="pl"><div class="n"><a class="shop" href="https://www.google.com/maps/search/?api=1&query=%E8%87%AA%E5%AE%B6%E7%84%99%E7%85%8E%E7%8F%88%E7%90%B2%20%E6%97%AD%E5%B7%9D%E5%8C%97%E7%8F%88%E9%A4%A8&query_place_id=ChIJC4XmP4blDF8RGMz-zQxXPPI" target="_blank" rel="noopener">自家焙煎珈琲 旭川北珈館</a> 🌟4.7</div><span class="m">🫘 北門町17丁目｜老闆親自烘豆，可隔窗看烘焙；不懂豆子跟店主說喜好即可｜11:00–19:00、週二三休</span></div>
+  <div class="kd" id="t-sweet" style="font-size:11.5px;color:var(--maple);font-weight:800;margin:12px 0 6px">🍮 甜點・伴手禮</div>
+  <div class="pl"><div class="n"><a class="shop" href="https://www.google.com/maps/search/?api=1&query=%E5%B2%A9%E6%B3%89Cafe%20%E3%83%95%E3%82%A3%E3%83%BC%E3%83%AB%E6%97%AD%E5%B7%9D%E5%BA%97&query_place_id=ChIJp-te7VznDF8RnhObJFVAiPk" target="_blank" rel="noopener">岩泉農場（岩泉Cafe）</a> 🌟4.3</div><span class="m">🥛 大谷翔平口中「世界第一好吃的優格」｜フィール旭川 B1、10:00–19:20 無休｜<b style="color:var(--maple)">已排 9/24</b></span></div>
 
-  <div style="font-size:11.5px;color:var(--maple);font-weight:800;margin:10px 0 6px">9/25 美瑛日</div>
-  <div class="pl"><div class="n"><a class="shop" href="https://www.google.com/maps/search/?api=1&query=BIEI%20EARTH%20TABLE%20%E7%BE%8E%E7%91%9B&query_place_id=ChIJpSEeIT_FDF8RbptL4TTRkBw" target="_blank" rel="noopener">BIEI EARTH TABLE</a> 🌟4.9</div><span class="m">🍔 美瑛榮町、新開店就衝到 4.9｜和牛起司漢堡、烤豬肉溫泉蛋定食評價爆棚，套餐從沙拉湯品到甜點都像 fine dining；店員會英文｜11:00–22:00（週日到 15:00）｜<b>唯一晚上也開的美瑛好店</b></span></div>
-  <div class="pl"><div class="n"><a class="shop" href="https://www.google.com/maps/search/?api=1&query=%E3%81%A1%E3%81%8B%E3%82%89%E3%81%AE%E9%A3%9F%E5%A0%82%20%E7%BE%8E%E7%91%9B&query_place_id=ChIJL0sHVQrFDF8RdQkAfHYVtKA" target="_blank" rel="noopener">ちからの食堂</a> 🌟4.9</div><span class="m">🦌 美瑛中町｜在地肉品:美瑛鹿肉燉煮、烤牛肉丼、三種肉拼盤（富良野烤牛+美瑛烤豬+蝦夷烤鹿）；附馬鈴薯牛奶濃湯｜⚠️ 只開<b>三、六、日 11:30–15:00</b>（9/25 週五公休，要吃得換天）</span></div>
-  <div class="pl"><div class="n"><a class="shop" href="https://www.google.com/maps/search/?api=1&query=STAPLE%20%E7%BE%8E%E7%91%9B&query_place_id=ChIJT-ZlhM7HDF8RWSo-V_-Zv1E" target="_blank" rel="noopener">STAPLE</a> 🌟4.8</div><span class="m">🍽️ 美瑛留邊蕊、田野中的私廚｜8 道式 omakase，季節食材、擺盤精緻，評論說「價格便宜到不可思議」；窗外就是農田｜11:00–15:00、週四休｜<b>需預約</b>，想吃一頓特別的選這家</span></div>
+  <div class="grp" id="a-east">🚗 旭川東側（永山・豊岡・東光）</div>
+  <div style="font-size:11.5px;color:var(--mist);margin:-4px 0 9px;line-height:1.6">9/24 逛街日的購物區，開車 15–20 分</div>
+  <div style="font-size:11.5px;color:var(--maple);font-weight:800;margin:12px 0 6px">🥩 燒肉</div>
+  <div class="pl"><div class="n"><a class="shop" href="https://www.google.com/maps/search/?api=1&query=%E7%84%BC%E8%82%89%E3%82%B9%E3%82%B0%E3%83%AB%20%E6%97%AD%E5%B7%9D%20%E8%B1%8A%E5%B2%A1&query_place_id=ChIJ2RZlVyfnDF8RCN2Lg2Npahg" target="_blank" rel="noopener">焼肉スグル</a> 🌟4.5</div><span class="m">🥩 豊岡12条｜和牛炭火燒肉名店；スグル本気盛、味噌內臟｜17:00–24:30 每天｜<b>務必訂位</b>｜<b style="color:var(--maple)">已排 9/24</b></span></div>
+  <div class="pl"><div class="n"><a class="shop" href="https://www.google.com/maps/search/?api=1&query=%E3%82%84%E3%81%8D%E3%81%AB%E3%81%8F%E3%81%AE%E3%83%81%E3%83%A3%E3%83%B3%E3%83%97%20%E6%9D%B1%E5%85%89%E5%BA%97%20%E6%97%AD%E5%B7%9D&query_place_id=ChIJkW192s3nDF8RFeNgfpeICOI" target="_blank" rel="noopener">やきにくのチャンプ 東光店</a> 🌟4.5</div><span class="m">💰 東光13条｜<b>CP 值王</b>：¥5,000 套餐含 500g 上等和牛＋飯湯泡菜；客人多是在地人｜平日 17:00–24:00、六日 11:00 起</span></div>
+  <div class="kd" id="t-out" style="font-size:11.5px;color:var(--maple);font-weight:800;margin:12px 0 6px">⛺ 戶外・滑雪用品</div>
+  <div class="pl"><div class="n"><a class="shop" href="https://www.google.com/maps/search/?api=1&query=Sports%20Depo%20%E6%97%AD%E5%B7%9D%E6%B0%B8%E5%B1%B1&query_place_id=ChIJ_4ShHKHmDF8R7JaOAL-yS8w" target="_blank" rel="noopener">Sports Depo ＋ Alpen Outdoors</a> 🌟3.8</div><span class="m">🏬 永山3条，2F 為 Sports Depo＋Alpen Outdoors｜大型連鎖、<b>可免稅</b>、停車方便、10:00–21:00 無休｜跟玩具反斗城同區</span></div>
+  <div class="pl"><div class="n"><a class="shop" href="https://www.google.com/maps/search/?api=1&query=Spray%20%E6%97%AD%E5%B7%9D%20%E8%B1%8A%E5%B2%A112%E6%9D%A1&query_place_id=ChIJK0zRa2fmDF8RE936vKwSprE" target="_blank" rel="noopener">Spray（單板專門）</a> 🌟4.4</div><span class="m">🏂 豊岡12条、跟焼肉スグル同區｜snowboard／splitboard 專門，被評為「北海道最好的單板店」｜12:00–19:00、<b>週三休</b></span></div>
 
-  <div style="font-size:11.5px;color:var(--maple);font-weight:800;margin:14px 0 6px">9/26 旭岳日（東川町，去回程都會經過）</div>
-  <div class="pl"><div class="n"><a class="shop" href="https://www.google.com/maps/search/?api=1&query=Haru%20Kitchen%20%E6%9D%B1%E5%B7%9D%E7%94%BA&query_place_id=ChIJod1o8wDbDF8Rlc7TG11MSF8" target="_blank" rel="noopener">Haru Kitchen</a> 🌟4.5</div><span class="m">🏡 <b>離旭岳纜車最近的好店</b>、東川町町東｜一人主廚經營，鹿肉燉菜配自家烤麵包、馬鈴薯焗烤、牛肉咖哩；窗外是庭園，安靜舒服｜11:30–14:00、<b>只開四～日</b>（9/26 週六 OK）｜<b>建議先訂位</b>，有時只收預約</span></div>
-  <div class="pl"><div class="n"><a class="shop" href="https://www.google.com/maps/search/?api=1&query=On%20The%20Table%20%E6%9D%B1%E5%B7%9D%E7%94%BA&query_place_id=ChIJ4XCGIvfcDF8Rp5fKyJhqjNU" target="_blank" rel="noopener">On The Table</a> 🌟4.6</div><span class="m">🍛 東川町南町 2F、跟 YAMAtune 同一區｜漢堡排的多蜜醬被讚爆，<b>綠咖哩</b>有評論說勝過吃過的米其林餐廳｜平日 11:30–17:00、<b>週五六日到 23:00</b>｜下山後吃晚餐的好選擇</span></div>
+  <div class="grp" id="a-nw">🏔️ 旭川西北（緑町）</div>
+  <div class="pl"><div class="n"><a class="shop" href="https://www.google.com/maps/search/?api=1&query=%E7%A7%80%E5%B2%B3%E8%8D%98%20%E6%97%AD%E5%B7%9D&query_place_id=ChIJYUnkYV_vDF8RSr5aaSNWuiU" target="_blank" rel="noopener">秀岳荘 旭川店</a> 🌟3.9</div><span class="m">⛰️ 旭川最強戶外選品：登山/攀岩/露營/滑雪，店員自己就是玩家｜10:00–19:00、<b>週一休</b>｜<b style="color:var(--maple)">已排 9/24</b></span></div>
 
-  <div style="font-size:11.5px;color:var(--maple);font-weight:800;margin:14px 0 6px">9/27 黑岳・層雲峽日</div>
-  <div class="pl"><div class="n"><a class="shop" href="https://www.google.com/maps/search/?api=1&query=%E3%81%A8%E3%82%82%E3%81%A1%E3%82%83%E3%82%93%E9%A3%9F%E5%A0%82%20%E9%BB%92%E5%B2%B3%E5%BA%97%20%E5%B1%A4%E9%9B%B2%E5%B3%A1&query_place_id=ChIJBUxr-k8vDV8RJI24Vy0DXFA" target="_blank" rel="noopener">ともちゃん食堂 黑岳店</a> 🌟4.5</div><span class="m">🍜 <b>就在黑岳纜車站旁</b>，層雲峽評價最高的食堂｜味噌拉麵、鹽味拉麵、蕎麥麵、豬排丼，份量大、CP 值好；有評論說纜車因強風停駛時就在這吃午餐｜11:00–15:00 每天</span></div>
-  <div class="pl"><div class="n"><a class="shop" href="https://www.google.com/maps/search/?api=1&query=Beer%20Grill%20Canyon%20%E5%B1%A4%E9%9B%B2%E5%B3%A1&query_place_id=ChIJt0BSAKMvDV8R3Lp0eiQqnWQ" target="_blank" rel="noopener">Beer Grill Canyon</a> 🌟4.0</div><span class="m">🍝 層雲峽溫泉街｜義大利麵、披薩、深谷漢堡排辛辣義式咖哩；復古氛圍放 70–90 年代搖滾｜11:30–14:00 / 17:30–21:00、週二休｜⚠️ 有時<b>只收現金</b>、熱門餐點會賣完</span></div>
-  <div class="pl"><div class="n"><a class="shop" href="https://www.google.com/maps/search/?api=1&query=%E6%97%AD%E9%A3%9F%E5%A0%82%20%E4%B8%8A%E5%B7%9D%E7%94%BA&query_place_id=ChIJGb4SJJwiDV8RL3vUCmHb0QI" target="_blank" rel="noopener">旭食堂（上川町）</a> 🌟4.1</div><span class="m">🍜 <b>上川町名店、1000+ 則評論</b>｜北海道味噌拉麵招牌，牆上滿是名人簽名；老闆熱情、會用英文教你怎麼吃拉麵｜11:00–14:30 / 17:00–19:30、週一休｜<b>層雲峽回旭川的路上順路</b>（國道39號旁）</span></div>
-  <div class="pl"><div class="n"><a class="shop" href="https://www.google.com/maps/search/?api=1&query=%E3%81%8D%E3%82%88%E3%81%97%E9%A3%9F%E5%A0%82%20%E4%B8%8A%E5%B7%9D%E7%94%BA&query_place_id=ChIJU5oQlJ0iDV8RSEWOzGUncAM" target="_blank" rel="noopener">きよし食堂（上川町）</a> 🌟4.2</div><span class="m">🍥 同在上川町｜<b>叉燒多到誇張</b>（¥1,600 的拉麵鋪滿整碗），鹽味拉麵評價極高；店前有停車位｜11:00–14:00 / 17:00–20:00、週一休｜跟旭食堂二選一</span></div>
+  <div class="grp" id="a-biei">🌾 美瑛（9/25）</div>
+  <div style="font-size:11.5px;color:var(--mist);margin:-4px 0 9px;line-height:1.6">騎車＋丘陵日，旭川開車 40 分</div>
+  <div class="kd" id="t-rest" style="font-size:11.5px;color:var(--maple);font-weight:800;margin:12px 0 6px">🍽️ 餐廳</div>
+  <div class="pl"><div class="n"><a class="shop" href="https://www.google.com/maps/search/?api=1&query=BIEI%20EARTH%20TABLE%20%E7%BE%8E%E7%91%9B&query_place_id=ChIJpSEeIT_FDF8RbptL4TTRkBw" target="_blank" rel="noopener">BIEI EARTH TABLE</a> 🌟4.9</div><span class="m">🍔 美瑛榮町｜和牛起司漢堡、烤豬肉溫泉蛋定食評價爆棚，套餐從沙拉到甜點都像 fine dining；店員會英文｜11:00–22:00（週日到 15:00）｜<b>唯一晚上也開的美瑛好店</b></span></div>
+  <div class="pl"><div class="n"><a class="shop" href="https://www.google.com/maps/search/?api=1&query=%E3%81%A1%E3%81%8B%E3%82%89%E3%81%AE%E9%A3%9F%E5%A0%82%20%E7%BE%8E%E7%91%9B&query_place_id=ChIJL0sHVQrFDF8RdQkAfHYVtKA" target="_blank" rel="noopener">ちからの食堂</a> 🌟4.9</div><span class="m">🦌 美瑛中町｜美瑛鹿肉燉煮、烤牛肉丼、三種肉拼盤；附馬鈴薯牛奶濃湯｜⚠️ 只開<b>三、六、日 11:30–15:00</b>（9/25 週五公休）</span></div>
+  <div class="pl"><div class="n"><a class="shop" href="https://www.google.com/maps/search/?api=1&query=STAPLE%20%E7%BE%8E%E7%91%9B&query_place_id=ChIJT-ZlhM7HDF8RWSo-V_-Zv1E" target="_blank" rel="noopener">STAPLE</a> 🌟4.8</div><span class="m">🍽️ 美瑛留邊蕊、田野中的私廚｜8 道式 omakase，評論說「價格便宜到不可思議」｜11:00–15:00、週四休｜<b>需預約</b></span></div>
+  <div style="font-size:11.5px;color:var(--maple);font-weight:800;margin:12px 0 6px">🍮 甜點・牧場</div>
+  <div class="pl"><div class="n"><a class="shop" href="https://www.google.com/maps/search/?api=1&query=%E7%BE%8E%E7%91%9B%E6%94%BE%E7%89%A7%E9%85%AA%E8%BE%B2%E5%A0%B4&query_place_id=ChIJJW25s6PJDF8RfVKJ-JHdd70" target="_blank" rel="noopener">美瑛放牧酪農場</a> 🌟4.4</div><span class="m">🧀 烤起司吐司＋純牛奶霜淇淋，丘陵放牧景觀｜10:00–16:00｜<b style="color:var(--maple)">已排 9/25</b></span></div>
 
-  <div class="grp">⛺ 戶外・滑雪用品店</div>
-  <div class="pl"><div class="n"><a class="shop" href="https://www.google.com/maps/search/?api=1&query=%E7%A7%80%E5%B2%B3%E8%8D%98%20%E6%97%AD%E5%B7%9D&query_place_id=ChIJYUnkYV_vDF8RSr5aaSNWuiU" target="_blank" rel="noopener">秀岳荘 旭川店</a> 🌟3.9</div><span class="m">⛰️ 旭川最強選品，登山/攀岩/露營/滑雪；店員自己就是玩家。評論：「旭川最好的選擇，價格略高但品質很高」｜10:00–19:00、<b>週一休</b>｜中和5条（市區西北）</span></div>
-  <div class="pl"><div class="n"><a class="shop" href="https://www.google.com/maps/search/?api=1&query=Sports%20Depo%20%E6%97%AD%E5%B7%9D%E6%B0%B8%E5%B1%B1&query_place_id=ChIJ_4ShHKHmDF8R7JaOAL-yS8w" target="_blank" rel="noopener">Sports Depo ＋ Alpen Outdoors</a> 🌟3.8</div><span class="m">🏬 永山3条，2F 是 Sports Depo＋Alpen Outdoors，1F 高爾夫｜大型連鎖、<b>可免稅</b>、停車方便、10:00–21:00 無休｜跟玩具反斗城同區，9/24 順路</span></div>
-  <div class="pl"><div class="n"><a class="shop" href="https://www.google.com/maps/search/?api=1&query=Spray%20%E6%97%AD%E5%B7%9D%20%E8%B1%8A%E5%B2%A112%E6%9D%A1&query_place_id=ChIJK0zRa2fmDF8RE936vKwSprE" target="_blank" rel="noopener">Spray（單板專門）</a> 🌟4.4</div><span class="m">🏂 豊岡12条、跟焼肉スグル同一區｜snowboard／splitboard 專門，評論說是「北海道最好的單板店」、修板技術好｜12:00–19:00、<b>週三休</b></span></div>
-  <div class="pl"><div class="n"><a class="shop" href="https://www.google.com/maps/search/?api=1&query=YAMAtune%20%E5%A4%A7%E9%9B%AA%E5%B1%B1%E5%BA%97%20%E6%9D%B1%E5%B7%9D&query_place_id=ChIJO6Q7nvbcDF8Rva8XMqlEF7U" target="_blank" rel="noopener">YAMAtune 大雪山店</a> 🌟4.6</div><span class="m">🧦 東川町，<b>旭岳回程順路</b>（9/26 可繞）｜機能襪與 Patagonia 選品，美麗諾羊毛脖圍評價極高；店員英文流利｜10:00–18:00、<b>週四休</b></span></div>
-  <div class="grp">🥩 燒肉・成吉思汗</div>
-  <div class="pl"><div class="n"><a class="shop" href="https://www.google.com/maps/search/?api=1&query=%E7%84%BC%E8%82%89%E3%82%B9%E3%82%B0%E3%83%AB%20%E6%97%AD%E5%B7%9D%20%E8%B1%8A%E5%B2%A1&query_place_id=ChIJ2RZlVyfnDF8RCN2Lg2Npahg" target="_blank" rel="noopener">焼肉スグル</a> 🌟4.5 <b style="color:var(--maple)">已排 9/24</b></div><span class="m">🥩 豊岡12条｜スグル本気盛、味噌內臟｜17:00–24:30 每天｜<b>務必訂位</b></span></div>
-  <div class="pl"><div class="n"><a class="shop" href="https://www.google.com/maps/search/?api=1&query=%E6%88%90%E5%90%89%E6%80%9D%E6%B1%97%E5%A4%A7%E9%BB%92%E5%B1%8B%20%E6%9C%AC%E5%BA%97%20%E6%97%AD%E5%B7%9D&query_place_id=ChIJRf7PMgzmDF8Rm_3HyHkvjn0" target="_blank" rel="noopener">成吉思汗 大黑屋 本店</a> 🌟4.5 <b style="color:var(--maple)">已排 9/26</b></div><span class="m">🐑 4条通5丁目｜烤羊肉名店、iPad 點餐｜15:00–23:30 每天｜不接受訂位、抽號碼牌</span></div>
-  <div class="pl"><div class="n"><a class="shop" href="https://www.google.com/maps/search/?api=1&query=%E7%84%BC%E8%82%89%E9%8C%A6%E8%8A%B1%E6%A5%BC%20%E4%B8%80%E6%9D%A1%E5%BA%97%20%E6%97%AD%E5%B7%9D&query_place_id=ChIJ--BjtQ_mDF8RT9Yj6qHMZ6A" target="_blank" rel="noopener">焼肉 錦花樓 一条店</a> 🌟4.3</div><span class="m">🍖 1条通4丁目、<b>站前走得到</b>｜和牛/豬/羊都有，平板點餐可切英文｜評論：「無預約要等 1 小時以上，強烈建議訂位」｜午 11:30–14:30、晚 17:00–22:00</span></div>
-  <div class="pl"><div class="n"><a class="shop" href="https://www.google.com/maps/search/?api=1&query=%E7%84%BC%E8%82%89%E5%92%8C%E5%B3%B6%20%E6%97%AD%E5%B7%9D%202%E6%9D%A1%E9%80%9A&query_place_id=ChIJ3Uo15f7nDF8ROrsRjwZQrZs" target="_blank" rel="noopener">焼肉 和島</a> 🌟4.5</div><span class="m">🐄 2条通7丁目、站前區｜牛舌評價特別高、肉質軟嫩｜11:00–24:30 每天，<b>午餐也開</b>｜想吃牛不吃羊的選這家</span></div>
-  <div class="pl"><div class="n"><a class="shop" href="https://www.google.com/maps/search/?api=1&query=%E3%82%84%E3%81%8D%E3%81%AB%E3%81%8F%E3%81%AE%E3%83%81%E3%83%A3%E3%83%B3%E3%83%97%20%E6%9D%B1%E5%85%89%E5%BA%97%20%E6%97%AD%E5%B7%9D&query_place_id=ChIJkW192s3nDF8RFeNgfpeICOI" target="_blank" rel="noopener">やきにくのチャンプ 東光店</a> 🌟4.5</div><span class="m">💰 東光13条（市區東南）｜<b>CP 值王</b>：¥5,000 套餐含 500g 上等和牛＋飯湯泡菜，兩人吃很飽；客人多是在地人｜平日 17:00–24:00、六日 11:00 起</span></div>
-  <div class="grp">☕ 咖啡廳</div>
-  <div class="pl"><div class="n"><a class="shop" href="https://www.google.com/maps/search/?api=1&query=NIDO%20COFFEE%20ROASTERY%20%E6%97%AD%E5%B7%9D&query_place_id=ChIJT13HZTAHDV8REJPiPEBcdc4" target="_blank" rel="noopener">NIDO COFFEE ROASTERY</a> 🌟4.7</div><span class="m">☕ 8条通2丁目｜自家烘焙，評論說是「旭川最好的精品咖啡」；拿鐵、抹茶拿鐵都推｜<b>08:00 開</b>，出發前買一杯剛好｜週四・週日休</span></div>
-  <div class="pl"><div class="n"><a class="shop" href="https://www.google.com/maps/search/?api=1&query=%E7%A5%9E%E7%94%B0%E7%8F%88%E7%90%B2%E5%9C%92%20%E6%97%AD%E5%B7%9D&query_place_id=ChIJQ2rDmnPmDF8ROXy_XcdgHjI" target="_blank" rel="noopener">神田珈琲園</a> 🌟4.6</div><span class="m">🍞 9条通8丁目、<b>離飯店最近</b>｜48 年老喫茶店，吐司和咖啡凍冰淇淋有名，服務評價極好｜08:00–18:00、<b>六日休</b>｜9/24 或 9/25 早上最適合</span></div>
-  <div class="pl"><div class="n"><a class="shop" href="https://www.google.com/maps/search/?api=1&query=B.BROWN%20%E6%97%AD%E5%B7%9D%20%E7%A5%9E%E6%A5%BD&query_place_id=ChIJbc6H1UznDF8RZhk_M8swTlE" target="_blank" rel="noopener">B.BROWN</a> 🌟4.4</div><span class="m">🍛 神楽3条、站前步行可到｜咖啡店但<b>咖哩才是招牌</b>：炸豬排咖哩份量驚人、附沙拉與培根；飯後送咖啡糖｜11:00–18:30、週三四休</span></div>
-  <div class="pl"><div class="n"><a class="shop" href="https://www.google.com/maps/search/?api=1&query=%E8%87%AA%E5%AE%B6%E7%84%99%E7%85%8E%E7%8F%88%E7%90%B2%20%E6%97%AD%E5%B7%9D%E5%8C%97%E7%8F%88%E9%A4%A8&query_place_id=ChIJC4XmP4blDF8RGMz-zQxXPPI" target="_blank" rel="noopener">自家焙煎珈琲 旭川北珈館</a> 🌟4.7</div><span class="m">🫘 北門町17丁目、住宅區中的小店｜老闆親自烘豆，可隔窗看烘焙；不懂豆子跟店主說喜好即可｜11:00–19:00、週二三休</span></div>
-  <div class="grp">🍮 甜點・伴手禮</div>
-  <div class="pl"><div class="n"><a class="shop" href="https://www.google.com/maps/search/?api=1&query=%E5%B2%A9%E6%B3%89Cafe%20%E3%83%95%E3%82%A3%E3%83%BC%E3%83%AB%E6%97%AD%E5%B7%9D%E5%BA%97&query_place_id=ChIJp-te7VznDF8RnhObJFVAiPk" target="_blank" rel="noopener">岩泉農場（岩泉Cafe）</a> 🌟4.3 <b style="color:var(--maple)">已排 9/24</b></div><span class="m">🥛 大谷翔平口中「世界第一好吃的優格」｜フィール旭川 B1、10:00–19:20 無休</span></div>
-  <div class="pl"><div class="n"><a class="shop" href="https://www.google.com/maps/search/?api=1&query=%E7%BE%8E%E7%91%9B%E6%94%BE%E7%89%A7%E9%85%AA%E8%BE%B2%E5%A0%B4&query_place_id=ChIJJW25s6PJDF8RfVKJ-JHdd70" target="_blank" rel="noopener">美瑛放牧酪農場</a> 🌟4.4 <b style="color:var(--maple)">已排 9/25</b></div><span class="m">🧀 烤起司吐司＋純牛奶霜淇淋，丘陵放牧景觀｜10:00–16:00</span></div>
+  <div class="grp" id="a-hig">⛰️ 東川・旭岳（9/26）</div>
+  <div style="font-size:11.5px;color:var(--mist);margin:-4px 0 9px;line-height:1.6">旭岳來回都會經過東川町</div>
+  <div style="font-size:11.5px;color:var(--maple);font-weight:800;margin:12px 0 6px">🍽️ 餐廳</div>
+  <div class="pl"><div class="n"><a class="shop" href="https://www.google.com/maps/search/?api=1&query=Haru%20Kitchen%20%E6%9D%B1%E5%B7%9D%E7%94%BA&query_place_id=ChIJod1o8wDbDF8Rlc7TG11MSF8" target="_blank" rel="noopener">Haru Kitchen</a> 🌟4.5</div><span class="m">🏡 <b>離旭岳纜車最近的好店</b>、東川町町東｜鹿肉燉菜配自家烤麵包、馬鈴薯焗烤｜11:30–14:00、<b>只開四～日</b>（9/26 週六 OK）｜<b>建議先訂位</b></span></div>
+  <div class="pl"><div class="n"><a class="shop" href="https://www.google.com/maps/search/?api=1&query=On%20The%20Table%20%E6%9D%B1%E5%B7%9D%E7%94%BA&query_place_id=ChIJ4XCGIvfcDF8Rp5fKyJhqjNU" target="_blank" rel="noopener">On The Table</a> 🌟4.6</div><span class="m">🍛 東川町南町 2F、跟 YAMAtune 同區｜漢堡排多蜜醬被讚爆，<b>綠咖哩</b>有評論說勝過米其林｜平日 11:30–17:00、<b>週五六日到 23:00</b></span></div>
+  <div style="font-size:11.5px;color:var(--maple);font-weight:800;margin:12px 0 6px">⛺ 戶外用品</div>
+  <div class="pl"><div class="n"><a class="shop" href="https://www.google.com/maps/search/?api=1&query=YAMAtune%20%E5%A4%A7%E9%9B%AA%E5%B1%B1%E5%BA%97%20%E6%9D%B1%E5%B7%9D&query_place_id=ChIJO6Q7nvbcDF8Rva8XMqlEF7U" target="_blank" rel="noopener">YAMAtune 大雪山店</a> 🌟4.6</div><span class="m">🧦 東川町，<b>旭岳回程順路</b>｜機能襪與 Patagonia 選品，美麗諾脖圍評價極高；店員英文流利｜10:00–18:00、<b>週四休</b></span></div>
+
+  <div class="grp" id="a-sou">🍁 層雲峽・上川（9/27）</div>
+  <div style="font-size:11.5px;color:var(--mist);margin:-4px 0 9px;line-height:1.6">黑岳日；上川町在回旭川的國道39號旁，順路</div>
+  <div class="pl"><div class="n"><a class="shop" href="https://www.google.com/maps/search/?api=1&query=%E3%81%A8%E3%82%82%E3%81%A1%E3%82%83%E3%82%93%E9%A3%9F%E5%A0%82%20%E9%BB%92%E5%B2%B3%E5%BA%97%20%E5%B1%A4%E9%9B%B2%E5%B3%A1&query_place_id=ChIJBUxr-k8vDV8RJI24Vy0DXFA" target="_blank" rel="noopener">ともちゃん食堂 黑岳店</a> 🌟4.5</div><span class="m">🍜 <b>就在黑岳纜車站旁</b>，層雲峽評價最高的食堂｜味噌/鹽拉麵、蕎麥麵、豬排丼，份量大｜纜車因強風停駛時也能在這吃午餐｜11:00–15:00 每天</span></div>
+  <div class="pl"><div class="n"><a class="shop" href="https://www.google.com/maps/search/?api=1&query=Beer%20Grill%20Canyon%20%E5%B1%A4%E9%9B%B2%E5%B3%A1&query_place_id=ChIJt0BSAKMvDV8R3Lp0eiQqnWQ" target="_blank" rel="noopener">Beer Grill Canyon</a> 🌟4.0</div><span class="m">🍝 層雲峽溫泉街｜義大利麵、披薩、深谷漢堡排辛辣義式咖哩；放 70–90 年代搖滾｜11:30–14:00 / 17:30–21:00、週二休｜⚠️ 有時<b>只收現金</b></span></div>
+  <div class="pl"><div class="n"><a class="shop" href="https://www.google.com/maps/search/?api=1&query=%E6%97%AD%E9%A3%9F%E5%A0%82%20%E4%B8%8A%E5%B7%9D%E7%94%BA&query_place_id=ChIJGb4SJJwiDV8RL3vUCmHb0QI" target="_blank" rel="noopener">旭食堂（上川町）</a> 🌟4.1</div><span class="m">🍜 <b>上川町名店、1000+ 則評論</b>｜北海道味噌拉麵招牌，牆上滿是名人簽名；老闆會用英文教你怎麼吃｜11:00–14:30 / 17:00–19:30、週一休</span></div>
+  <div class="pl"><div class="n"><a class="shop" href="https://www.google.com/maps/search/?api=1&query=%E3%81%8D%E3%82%88%E3%81%97%E9%A3%9F%E5%A0%82%20%E4%B8%8A%E5%B7%9D%E7%94%BA&query_place_id=ChIJU5oQlJ0iDV8RSEWOzGUncAM" target="_blank" rel="noopener">きよし食堂（上川町）</a> 🌟4.2</div><span class="m">🍥 同在上川町｜<b>叉燒多到誇張</b>，鹽味拉麵評價極高；店前有停車位｜11:00–14:00 / 17:00–20:00、週一休｜跟旭食堂二選一</span></div>
 </div>
+
 <div class="flex">
-  <h2>🍜 濃厚拉麵口袋清單（備選）</h2>
+  <h2 id="t-ramen" style="scroll-margin-top:110px">🍜 濃厚拉麵口袋清單（備選）</h2>
   <div class="lead">旭川本地是清爽醬油系；以下是少數走<b>豚骨/雞白湯/家系</b>濃厚路線的店，臨時想吃再來。多在豊岡・永山一帶（市區東側，跟燒肉スグル同方向）。</div>
   <div class="drow">
     <span class="wx wx-sun">雞白湯</span>
@@ -1096,7 +1134,6 @@ document.getElementById('fc-sync').onclick=function(){
     fcRender();
   });
 };
-
 
 /* ---------- my places ---------- */
 var MPK='ahk_myplaces';
